@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8fdee3fd381f40b4c917bd3cd13a6f77
+guid: c1c217740db45f8449d4f977bd9b8ed5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,9 +72,9 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atkA_0
+      name: fall_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62e8037c631f7d6418a69a265952159a
-      internalID: -1240949456
+      spriteID: 55bf71cbab6d7c243ab113e4c680f0d2
+      internalID: 1341945776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_1
+      name: fall_1
       rect:
         serializedVersion: 2
         x: 200
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0edba8cf0c5a4434fbbb203e10e17b0d
-      internalID: 1321390738
+      spriteID: 152ec04034373d94b8eaa4923da3b5cc
+      internalID: -540390086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_2
+      name: fall_2
       rect:
         serializedVersion: 2
         x: 400
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18582d25a5e47184dabfdb9214e9aac4
-      internalID: -1915068209
+      spriteID: aa6f4a335e9070f408d5832a46a9b8e2
+      internalID: 1236517179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_3
+      name: fall_3
       rect:
         serializedVersion: 2
         x: 600
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcb70ba096ce6c24c9904ca4acbf1a3e
-      internalID: -589681280
+      spriteID: 92e47ae4a8050704e8cb6e5451ec14eb
+      internalID: -1809436052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_4
+      name: fall_4
       rect:
         serializedVersion: 2
         x: 800
@@ -195,77 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcb1c2417f39bc84a9a02c40800168c5
-      internalID: 17725678
+      spriteID: 170e52b6fb8cd25439540ce34e09637c
+      internalID: -1576883695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_5
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 400
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d78e03a5533cb794f8af44a25af870be
-      internalID: 507088114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_6
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 400
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46bd2bfd556ceab46a847740af86589a
-      internalID: -1409297131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_7
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 400
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da97a52d806ab2e4b9d1664f201f89b1
-      internalID: 662412892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_8
+      name: fall_5
       rect:
         serializedVersion: 2
         x: 0
@@ -279,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a949e5a5286b75499d927ef0a880e16
-      internalID: -1939812738
+      spriteID: c44bd3b12aba9d446a2052f8d067ba40
+      internalID: -1620911411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_9
+      name: fall_6
       rect:
         serializedVersion: 2
         x: 200
@@ -300,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5784aea48984ed94dacd6791588c61bd
-      internalID: 60663325
+      spriteID: 54d468afc616c2f47831bd56f9ac8046
+      internalID: -1012147287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_10
+      name: fall_7
       rect:
         serializedVersion: 2
         x: 400
@@ -321,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2913c2c47e3a444abfb2532430024ba
-      internalID: -1392015639
+      spriteID: 6f2a018840b33704aac52ef0560af80a
+      internalID: 912952541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_11
+      name: fall_8
       rect:
         serializedVersion: 2
         x: 600
@@ -342,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32418607782376d49a582d7c84a02d6f
-      internalID: 2116070557
+      spriteID: aaab0e8f7fbf896488451266987648f9
+      internalID: 1724110988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_12
+      name: fall_9
       rect:
         serializedVersion: 2
         x: 800
@@ -363,77 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2712a4aef60599440802d912ba5e6697
-      internalID: 1181981638
+      spriteID: 4ca239400dd703840910b7e6cf0d8a38
+      internalID: -1801198712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_13
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 200
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49dc65c53aaa3e74ea47d26ef6813f01
-      internalID: -1645017538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_14
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 200
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f49e97110e8efa04da274bed85c342e1
-      internalID: 2101367674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_15
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 200
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23a39c3651954de4ca39d15761ccf60d
-      internalID: -1693654875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_16
+      name: fall_10
       rect:
         serializedVersion: 2
         x: 0
@@ -447,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f30f2f1852770ed4491698523542927f
-      internalID: -175096111
+      spriteID: aac26a1719a4a914288461d09dd80af2
+      internalID: -463204664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_17
+      name: fall_11
       rect:
         serializedVersion: 2
         x: 200
@@ -468,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecbe51d40257e9942b79fcb229b07df6
-      internalID: 193007470
+      spriteID: ded17a2e1d17f974e929a67572e7bef8
+      internalID: -1200273015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_18
+      name: fall_12
       rect:
         serializedVersion: 2
         x: 400
@@ -489,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a845a1d7c234b1448bcbaa25999294a6
-      internalID: -362903409
+      spriteID: 7bd9c916161bf684994ca1c77020cff3
+      internalID: -189131400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_19
+      name: fall_13
       rect:
         serializedVersion: 2
         x: 600
@@ -510,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc463fb583e3bfd4e83d782de63a08f0
-      internalID: -1847342148
+      spriteID: 3e0ec79fd13621648a87a910f6b1c2cd
+      internalID: 1734587869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_20
+      name: fall_14
       rect:
         serializedVersion: 2
         x: 800
@@ -531,29 +405,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83819d1f03fd2d24f980b4121ab434ce
-      internalID: 763128138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_21
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 056ea883520b907419077a04018e633e
-      internalID: -1358179280
+      spriteID: af4101205b2137a4fa5aae1808086555
+      internalID: 1458428260
       vertices: []
       indices: 
       edges: []
@@ -569,28 +422,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      atkA_0: -1240949456
-      atkA_1: 1321390738
-      atkA_10: -1392015639
-      atkA_11: 2116070557
-      atkA_12: 1181981638
-      atkA_13: -1645017538
-      atkA_14: 2101367674
-      atkA_15: -1693654875
-      atkA_16: -175096111
-      atkA_17: 193007470
-      atkA_18: -362903409
-      atkA_19: -1847342148
-      atkA_2: -1915068209
-      atkA_20: 763128138
-      atkA_21: -1358179280
-      atkA_3: -589681280
-      atkA_4: 17725678
-      atkA_5: 507088114
-      atkA_6: -1409297131
-      atkA_7: 662412892
-      atkA_8: -1939812738
-      atkA_9: 60663325
+      fall_0: 1341945776
+      fall_1: -540390086
+      fall_10: -463204664
+      fall_11: -1200273015
+      fall_12: -189131400
+      fall_13: 1734587869
+      fall_14: 1458428260
+      fall_2: 1236517179
+      fall_3: -1809436052
+      fall_4: -1576883695
+      fall_5: -1620911411
+      fall_6: -1012147287
+      fall_7: 912952541
+      fall_8: 1724110988
+      fall_9: -1801198712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
