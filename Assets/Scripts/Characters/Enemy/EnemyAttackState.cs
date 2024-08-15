@@ -23,6 +23,8 @@ namespace Assets.Scripts.Characters.Enemy
         public override void Enter()
         {
             base.Enter();
+
+            character.LastTimeAttacked = Time.time;
             player = PlayerManager.instance.player.transform;
 
             if (comboCounter > comboWindow || Time.time >= character.LastTimeAttacked + comboWindow)
