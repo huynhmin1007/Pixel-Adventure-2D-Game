@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 54728f233428db447b2cd25834ca4b6e
+guid: adb909ab67b9a3242925acb80d645822
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atkA_0
+      name: atkLoadA_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44044da89a4ada943883809a063ddf3b
-      internalID: -2038650990
+      spriteID: 1f8e55c292b3fbe41b3834e013d1ad01
+      internalID: -1331470592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_1
+      name: atkLoadA_1
       rect:
         serializedVersion: 2
         x: 500
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f6bff5c16be4d48aed025505b22377
-      internalID: 114746425
+      spriteID: bad483175af2b974e9e00d897bfb5b87
+      internalID: -1975008933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_2
+      name: atkLoadA_2
       rect:
         serializedVersion: 2
         x: 1000
@@ -166,35 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0e5fd97f3f77b744acb89a1a66776b2
-      internalID: 1187618541
+      spriteID: e0dcd33bfc26c2c49ab9c5dcee46d593
+      internalID: -962037134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_3
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 530426e0c3b2a724f836c246098ef673
-      internalID: 97467390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_4
+      name: atkLoadA_3
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18bb8fcda0efedb40a8848f760d7e0eb
-      internalID: -1725922119
+      spriteID: b1e04c0a5fd089342babab83b3a16f41
+      internalID: 1304454763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_5
+      name: atkLoadA_4
       rect:
         serializedVersion: 2
         x: 500
@@ -229,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00a23a9118bd9f742951e4c6c73a5e2b
-      internalID: -967102993
+      spriteID: 80c0b52cda5cbd240b5b85036fad2b3f
+      internalID: -435104757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_6
+      name: atkLoadA_5
       rect:
         serializedVersion: 2
         x: 1000
@@ -250,35 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02a50cc51a412804cab44171b361a431
-      internalID: -250562538
+      spriteID: 97e378e5602aaef4bba34a4b195f5625
+      internalID: -2036616995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_7
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3a6040ccdcaf5c4ca5cf114e3c2fb22
-      internalID: 1906698871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_8
+      name: atkLoadA_6
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 140ac322359169140a5002a58e471bfa
-      internalID: 1639810182
+      spriteID: eee25d383bd2f004ea02685db9c1acc0
+      internalID: 1680136984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_9
+      name: atkLoadA_7
       rect:
         serializedVersion: 2
         x: 500
@@ -313,8 +271,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3682a99225499524a93d9cbed4513c66
-      internalID: -1894656126
+      spriteID: edaf76a08dffc004da36e1c42a305828
+      internalID: -170374771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkLoadA_8
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46943b9f876f6fb4290347dc1dc63afa
+      internalID: 544292551
       vertices: []
       indices: 
       edges: []
@@ -330,16 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      atkA_0: -2038650990
-      atkA_1: 114746425
-      atkA_2: 1187618541
-      atkA_3: 97467390
-      atkA_4: -1725922119
-      atkA_5: -967102993
-      atkA_6: -250562538
-      atkA_7: 1906698871
-      atkA_8: 1639810182
-      atkA_9: -1894656126
+      atkLoadA_0: -1331470592
+      atkLoadA_1: -1975008933
+      atkLoadA_2: -962037134
+      atkLoadA_3: 1304454763
+      atkLoadA_4: -435104757
+      atkLoadA_5: -2036616995
+      atkLoadA_6: 1680136984
+      atkLoadA_7: -170374771
+      atkLoadA_8: 544292551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

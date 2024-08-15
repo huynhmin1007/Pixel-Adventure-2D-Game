@@ -153,8 +153,14 @@ public abstract class Character : MonoBehaviour
     public Direction Direction { get => direction; set => direction = value; }
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
     public float JumpForce { get => jumpForce; set => jumpForce = value; }
-    public float XVelocity => rb.velocity.x;
-    public float YVelocity => rb.velocity.y;
+    private bool IsNearlyZero(float value, float threshold = 0.001f)
+    {
+        return Mathf.Abs(value) < threshold;
+    }
+
+    public float XVelocity => IsNearlyZero(rb.velocity.x) ? 0 : rb.velocity.x;
+    public float YVelocity => IsNearlyZero(rb.velocity.y) ? 0 : rb.velocity.y;
+
     public float XInput { get => xInput; set => xInput = value; }
     public float YInput { get => yInput; set => yInput = value; }
     public int ComboWindow { get => comboWindow; set => comboWindow = value; }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 54728f233428db447b2cd25834ca4b6e
+guid: 8deb00352a9a52c4bbcf4a1b9ad8542c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,91 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atkA_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44044da89a4ada943883809a063ddf3b
-      internalID: -2038650990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_1
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97f6bff5c16be4d48aed025505b22377
-      internalID: 114746425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_2
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0e5fd97f3f77b744acb89a1a66776b2
-      internalID: 1187618541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_3
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 530426e0c3b2a724f836c246098ef673
-      internalID: 97467390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_4
+      name: atkD_0
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18bb8fcda0efedb40a8848f760d7e0eb
-      internalID: -1725922119
+      spriteID: 29da6ada1437a3c47ab192acf3667b13
+      internalID: -218964137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_5
+      name: atkD_1
       rect:
         serializedVersion: 2
         x: 500
@@ -229,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00a23a9118bd9f742951e4c6c73a5e2b
-      internalID: -967102993
+      spriteID: 0361a4585aae47c4aa74a1362f858582
+      internalID: 1487279309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_6
+      name: atkD_2
       rect:
         serializedVersion: 2
         x: 1000
@@ -250,35 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02a50cc51a412804cab44171b361a431
-      internalID: -250562538
+      spriteID: c7d019ded3d77ad4485d882c8227616e
+      internalID: 332906189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_7
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3a6040ccdcaf5c4ca5cf114e3c2fb22
-      internalID: 1906698871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atkA_8
+      name: atkD_3
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 140ac322359169140a5002a58e471bfa
-      internalID: 1639810182
+      spriteID: b16378b93c271d04e84297b9dda40287
+      internalID: 1791876263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atkA_9
+      name: atkD_4
       rect:
         serializedVersion: 2
         x: 500
@@ -313,8 +208,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3682a99225499524a93d9cbed4513c66
-      internalID: -1894656126
+      spriteID: dc610c5df833a7a45ac61e6258942779
+      internalID: 1573097482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atkD_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e72dd474312dd41b1847795dc5ad5e
+      internalID: 2111457825
       vertices: []
       indices: 
       edges: []
@@ -330,16 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      atkA_0: -2038650990
-      atkA_1: 114746425
-      atkA_2: 1187618541
-      atkA_3: 97467390
-      atkA_4: -1725922119
-      atkA_5: -967102993
-      atkA_6: -250562538
-      atkA_7: 1906698871
-      atkA_8: 1639810182
-      atkA_9: -1894656126
+      atkD_0: -218964137
+      atkD_1: 1487279309
+      atkD_2: 332906189
+      atkD_3: 1791876263
+      atkD_4: 1573097482
+      atkD_5: 2111457825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

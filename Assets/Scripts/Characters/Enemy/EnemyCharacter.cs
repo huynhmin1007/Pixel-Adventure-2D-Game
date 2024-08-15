@@ -60,8 +60,6 @@ namespace Assets.Scripts.Characters.Enemy
             CloseCounterAttackWindow();
         }
 
-        public abstract void HandleBattle();
-
         public bool CanPrimaryAttack()
         {
             if (Time.time >= LastTimeAttacked + AttackCooldown)
