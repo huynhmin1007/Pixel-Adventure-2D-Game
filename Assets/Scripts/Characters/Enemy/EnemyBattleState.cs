@@ -8,9 +8,9 @@ namespace Assets.Scripts.Characters.Enemy
 {
     public class EnemyBattleState : BaseState
     {
-        private float moveDir;
         private Transform player;
         private EnemyCharacter character;
+        private float moveDir;
 
         public EnemyBattleState(EnemyCharacter characterBase, StateMachine stateMachine, Enum animBoolName) : base(characterBase, stateMachine, animBoolName)
         {
@@ -42,31 +42,14 @@ namespace Assets.Scripts.Characters.Enemy
             {
                 
                 stateTimer = character.BattleTime;
-                if (character.IsPlayerInAttackRange())
-                {
-                    moveDir = 0;
-
-                    if (CanAttack())
-                        character.HandleBattle();
-                    else
-                        stateMachine.ChangeState(character.GetState(EState.Idle));
-                }
+                character.HandleBattle();
+                return;
             }
             else if (stateTimer < 0
                 || Vector2.Distance(player.position, character.transform.position) > character.MaxFollowDistance)
                 stateMachine.ChangeState(character.GetState(EState.Idle));
 
             character.SetVelocity(character.MoveSpeed * moveDir, character.YVelocity, true);
-        }
-
-        protected virtual bool CanAttack()
-        {
-            if (Time.time >= character.LastTimeAttacked + character.AttackCooldown)
-            {
-                character.LastTimeAttacked = Time.time;
-                return true;
-            }
-            return false;
         }
     }
 }
