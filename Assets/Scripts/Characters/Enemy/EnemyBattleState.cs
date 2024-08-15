@@ -69,7 +69,7 @@ namespace Assets.Scripts.Characters.Enemy
                 moveDir = -1;
 
             /**
-             * Đổi sang Animation Move
+             * Đổi sang Animation Move và di chuyển về phía player
              */
             stateMachine.ChangeAnimation(EState.Move);
             character.SetVelocity(character.MoveSpeed * moveDir, character.YVelocity, true);
