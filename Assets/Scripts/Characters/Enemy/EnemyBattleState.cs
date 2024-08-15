@@ -37,9 +37,10 @@ namespace Assets.Scripts.Characters.Enemy
                 moveDir = 1;
             else if (player.position.x < character.transform.position.x)
                 moveDir = -1;
-
+            
             if (character.IsPlayerDetected())
             {
+                
                 stateTimer = character.BattleTime;
                 character.HandleBattle();
                 return;
