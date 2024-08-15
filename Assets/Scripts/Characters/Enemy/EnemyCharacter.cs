@@ -62,6 +62,18 @@ namespace Assets.Scripts.Characters.Enemy
 
         public abstract void HandleBattle();
 
+        public bool CanPrimaryAttack()
+        {
+            if (Time.time >= LastTimeAttacked + AttackCooldown)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public abstract bool CanBattle();
+
+
         public float PlayerCheckDistance { get => playerCheckDistance; set => playerCheckDistance = value; }
         public float LastTimeAttacked { get => lastTimeAttacked; set => lastTimeAttacked = value; }
         public float AttackCooldown { get => attackCooldown; set => attackCooldown = value; }

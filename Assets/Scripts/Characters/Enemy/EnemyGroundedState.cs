@@ -32,10 +32,19 @@ namespace Assets.Scripts.Characters.Enemy
         {
             base.Update();
 
-            if ((character.IsPlayerDetected()
+            if (character.IsPlayerDetected()
                 || Vector2.Distance(character.transform.position, player.position) < character.BackPlayerCheckDistance)
-                && Time.time >= character.LastTimeAttacked + character.AttackCooldown)
-                stateMachine.ChangeState(character.GetState(EState.Battle));
+            {
+                if (character.CanBattle())
+                    stateMachine.ChangeState(character.GetState(EState.Battle));
+                else if (!character.IsPlayerInAttackRange())
+                {
+                    if (player.position.x > character.transform.position.x)
+                        character.XInput = 1;
+                    else if (player.position.x < character.transform.position.x)
+                        character.XInput = -1;
+                }
+            }
         }
     }
 }
