@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 220a1cd8ccfe48146af7b899b6e62c0f
+guid: f9764dff0be0dad44a61a3f011be8cdb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: doctorSlash_0
+      name: idle-2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 94
-        width: 247
-        height: 94
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5106169dac928a24abc0d246c27f043c
-      internalID: -1794399539
+      spriteID: 179f2cfa69bd977419b49b1e49f3e45e
+      internalID: 1115831858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_1
+      name: idle-2_1
       rect:
         serializedVersion: 2
-        x: 247
-        y: 94
-        width: 247
-        height: 94
+        x: 500
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeb1689907486cf43928648981b212f3
-      internalID: -638603775
+      spriteID: de8e6bec9bd81a047b7402a36f1ffe0f
+      internalID: -2087484819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_2
+      name: idle-2_2
       rect:
         serializedVersion: 2
-        x: 494
-        y: 94
-        width: 247
-        height: 94
+        x: 1000
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87200a5bd42f1014cbe3f8e5a8abf424
-      internalID: -1243441533
+      spriteID: 38d47d5bc1a06554d96d063d057fba87
+      internalID: 107920938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_3
+      name: idle-2_3
       rect:
         serializedVersion: 2
-        x: 741
-        y: 94
-        width: 247
-        height: 94
+        x: 0
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b314c02196d9a4146bd1c163c47e6f7e
-      internalID: -318136892
+      spriteID: 4ea41fa527d1b924c8ff2ab9322e60a5
+      internalID: -849066087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_4
+      name: idle-2_4
       rect:
         serializedVersion: 2
-        x: 988
-        y: 94
-        width: 247
-        height: 94
+        x: 500
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2093cf7c4e3b0a4595e3c2c79e0a99d
-      internalID: -329577987
+      spriteID: f10b81970f4c6db45ba0fa5045a5d6c0
+      internalID: 1534173278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_5
+      name: idle-2_5
       rect:
         serializedVersion: 2
-        x: 1235
-        y: 94
-        width: 247
-        height: 94
+        x: 1000
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32009e9fdd3a3f248883b8541000b1c0
-      internalID: 878716563
+      spriteID: 6892518ce4527f343b8097d8dbfd8802
+      internalID: -40210006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_6
+      name: idle-2_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 247
-        height: 94
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f30a7dce97502514682a61465b8b238d
-      internalID: -795538879
+      spriteID: cea5778a2ea468147885f438542416ae
+      internalID: -249422136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_7
+      name: idle-2_7
       rect:
         serializedVersion: 2
-        x: 247
+        x: 500
         y: 0
-        width: 247
-        height: 94
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64ba044ebaaead845a48d2cfd1d99f24
-      internalID: -1543576343
+      spriteID: 2774ee6961c708a4ea7fdf593afca95e
+      internalID: 1620114233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_8
+      name: idle-2_8
       rect:
         serializedVersion: 2
-        x: 494
+        x: 1000
         y: 0
-        width: 247
-        height: 94
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,71 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cab3b314fc7705b4e8347190f822f6d8
-      internalID: 1634061578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doctorSlash_9
-      rect:
-        serializedVersion: 2
-        x: 741
-        y: 0
-        width: 247
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff5c1d3f3ca110b43a0c1bd45cba1f40
-      internalID: 358563186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doctorSlash_10
-      rect:
-        serializedVersion: 2
-        x: 988
-        y: 0
-        width: 247
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97c1302b34d81fa4c8cc70b6adcda99f
-      internalID: -222844320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doctorSlash_11
-      rect:
-        serializedVersion: 2
-        x: 1235
-        y: 0
-        width: 247
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a37303ec4b70824ab3b14114fb00b6b
-      internalID: -1697338077
+      spriteID: 143f484a0cb5c3a4a99c053e0b9f813a
+      internalID: -1542170841
       vertices: []
       indices: 
       edges: []
@@ -372,18 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      doctorSlash_0: -1794399539
-      doctorSlash_1: -638603775
-      doctorSlash_10: -222844320
-      doctorSlash_11: -1697338077
-      doctorSlash_2: -1243441533
-      doctorSlash_3: -318136892
-      doctorSlash_4: -329577987
-      doctorSlash_5: 878716563
-      doctorSlash_6: -795538879
-      doctorSlash_7: -1543576343
-      doctorSlash_8: 1634061578
-      doctorSlash_9: 358563186
+      idle-2_0: 1115831858
+      idle-2_1: -2087484819
+      idle-2_2: 107920938
+      idle-2_3: -849066087
+      idle-2_4: 1534173278
+      idle-2_5: -40210006
+      idle-2_6: -249422136
+      idle-2_7: 1620114233
+      idle-2_8: -1542170841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

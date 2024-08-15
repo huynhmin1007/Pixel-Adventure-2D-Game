@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 220a1cd8ccfe48146af7b899b6e62c0f
+guid: 76f825e5aeb946a4b903880471fc960c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: doctorSlash_0
+      name: move-2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 94
-        width: 247
-        height: 94
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5106169dac928a24abc0d246c27f043c
-      internalID: -1794399539
+      spriteID: d5caa22da124a594db18da2cbec6832c
+      internalID: -236199847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_1
+      name: move-2_1
       rect:
         serializedVersion: 2
-        x: 247
-        y: 94
-        width: 247
-        height: 94
+        x: 500
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeb1689907486cf43928648981b212f3
-      internalID: -638603775
+      spriteID: b17bd22e9c9dc72499d135f73eee3926
+      internalID: -1547198024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_2
+      name: move-2_2
       rect:
         serializedVersion: 2
-        x: 494
-        y: 94
-        width: 247
-        height: 94
+        x: 1000
+        y: 1000
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87200a5bd42f1014cbe3f8e5a8abf424
-      internalID: -1243441533
+      spriteID: 87315e8c5714df54c8cbdaa37ae12af9
+      internalID: -530124314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_3
+      name: move-2_3
       rect:
         serializedVersion: 2
-        x: 741
-        y: 94
-        width: 247
-        height: 94
+        x: 0
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b314c02196d9a4146bd1c163c47e6f7e
-      internalID: -318136892
+      spriteID: 955ece81a98f04147b97985dc1e8d678
+      internalID: -1171491384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_4
+      name: move-2_4
       rect:
         serializedVersion: 2
-        x: 988
-        y: 94
-        width: 247
-        height: 94
+        x: 500
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2093cf7c4e3b0a4595e3c2c79e0a99d
-      internalID: -329577987
+      spriteID: 0e7c1c1c48c4bd643a9aac11649084da
+      internalID: -51278323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_5
+      name: move-2_5
       rect:
         serializedVersion: 2
-        x: 1235
-        y: 94
-        width: 247
-        height: 94
+        x: 1000
+        y: 500
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32009e9fdd3a3f248883b8541000b1c0
-      internalID: 878716563
+      spriteID: 6c4f621e56f8e5b42be51434e14fcf30
+      internalID: -348896473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_6
+      name: move-2_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 247
-        height: 94
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f30a7dce97502514682a61465b8b238d
-      internalID: -795538879
+      spriteID: 4db21421877f4de4ebf2cb1a8ed0b980
+      internalID: 1658643554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_7
+      name: move-2_7
       rect:
         serializedVersion: 2
-        x: 247
+        x: 500
         y: 0
-        width: 247
-        height: 94
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64ba044ebaaead845a48d2cfd1d99f24
-      internalID: -1543576343
+      spriteID: 81fba2c5549e4684b9cac11cb817f447
+      internalID: 891068881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doctorSlash_8
+      name: move-2_8
       rect:
         serializedVersion: 2
-        x: 494
+        x: 1000
         y: 0
-        width: 247
-        height: 94
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,71 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cab3b314fc7705b4e8347190f822f6d8
-      internalID: 1634061578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doctorSlash_9
-      rect:
-        serializedVersion: 2
-        x: 741
-        y: 0
-        width: 247
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff5c1d3f3ca110b43a0c1bd45cba1f40
-      internalID: 358563186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doctorSlash_10
-      rect:
-        serializedVersion: 2
-        x: 988
-        y: 0
-        width: 247
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97c1302b34d81fa4c8cc70b6adcda99f
-      internalID: -222844320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doctorSlash_11
-      rect:
-        serializedVersion: 2
-        x: 1235
-        y: 0
-        width: 247
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a37303ec4b70824ab3b14114fb00b6b
-      internalID: -1697338077
+      spriteID: 7f3acbd01d83ec44393bc785d0734cd4
+      internalID: 155312128
       vertices: []
       indices: 
       edges: []
@@ -372,18 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      doctorSlash_0: -1794399539
-      doctorSlash_1: -638603775
-      doctorSlash_10: -222844320
-      doctorSlash_11: -1697338077
-      doctorSlash_2: -1243441533
-      doctorSlash_3: -318136892
-      doctorSlash_4: -329577987
-      doctorSlash_5: 878716563
-      doctorSlash_6: -795538879
-      doctorSlash_7: -1543576343
-      doctorSlash_8: 1634061578
-      doctorSlash_9: 358563186
+      move-2_0: -236199847
+      move-2_1: -1547198024
+      move-2_2: -530124314
+      move-2_3: -1171491384
+      move-2_4: -51278323
+      move-2_5: -348896473
+      move-2_6: 1658643554
+      move-2_7: 891068881
+      move-2_8: 155312128
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
