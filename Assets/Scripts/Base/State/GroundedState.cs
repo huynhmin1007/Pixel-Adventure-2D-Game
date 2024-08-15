@@ -18,7 +18,7 @@ namespace Assets.Scripts.Base.State
                 stateMachine.ChangeState(characterBase.GetState(EState.Jump));
                 return;
             }
-            else if (!characterBase.IsGrounded())
+            else if (characterBase.YVelocity < 0 && !characterBase.IsGrounded())
             {
                 stateMachine.ChangeState(characterBase.GetState(EState.Fall));
                 return;

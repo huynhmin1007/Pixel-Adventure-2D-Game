@@ -19,7 +19,6 @@ namespace Assets.Scripts.Characters.Enemy
 
             characterBase.ResetVelocity();
             stateTimer = character.IdleTime;
-
         }
 
         public override void Update()

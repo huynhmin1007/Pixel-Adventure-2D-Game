@@ -24,7 +24,6 @@ namespace Assets.Scripts.Characters.Enemy
         {
             base.Enter();
 
-            character.LastTimeAttacked = Time.time;
             player = PlayerManager.instance.player.transform;
 
             if (comboCounter > comboWindow || Time.time >= character.LastTimeAttacked + comboWindow)
@@ -37,7 +36,7 @@ namespace Assets.Scripts.Characters.Enemy
                 character.Flip();
             }
 
-            if (characterBase.AttackMove.Length > 0)
+            if (comboCounter < characterBase.AttackMove.Length)
             {
                 float xVelocity = !characterBase.IsGrounded() ? characterBase.MoveSpeed * .2f : 1;
                 characterBase.SetVelocity(
@@ -53,8 +52,9 @@ namespace Assets.Scripts.Characters.Enemy
         {
             base.Exit();
 
+            if (comboCounter == comboWindow)
+                character.LastTimeAttacked = Time.time;
             comboCounter++;
-            character.LastTimeAttacked = Time.time;
         }
 
         public override void Update()

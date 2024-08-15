@@ -2,6 +2,7 @@
 using Assets.Scripts.Common;
 using System;
 
+
 namespace Assets.Scripts.Characters.Enemy
 {
     public class EnemyMoveState : EnemyGroundedState
@@ -21,6 +22,7 @@ namespace Assets.Scripts.Characters.Enemy
         public override void Exit()
         {
             base.Exit();
+
         }
 
         public override void Update()
