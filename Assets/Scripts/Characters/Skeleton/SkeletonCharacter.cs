@@ -22,13 +22,31 @@ namespace Assets.Scripts.Characters.Skeleton
 
         public override void HandleBattle()
         {
-            stateMachine.ChangeState(states[EState.Attack]);
+            if (IsPlayerInAttackRange())
+            {
+                xInput = 0;
+                if (CanPrimaryAttack())
+                {
+                    stateMachine.ChangeState(states[EState.Attack]);
+                }
+                else
+                    stateMachine.ChangeState(states[EState.Idle]);
+            }
+            else
+            {
+                SetVelocity(MoveSpeed * Direction.XValue(), YVelocity);
+            }
         }
 
         public override void Stun()
         {
             base.Stun();
             stateMachine.ChangeState(states[EState.Stunned]);
+        }
+
+        public override bool CanBattle()
+        {
+            return CanPrimaryAttack();
         }
     }
 }
