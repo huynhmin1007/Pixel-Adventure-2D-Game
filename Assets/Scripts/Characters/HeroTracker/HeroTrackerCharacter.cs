@@ -19,7 +19,14 @@ namespace Assets.Scripts.Characters.HeroTracker
 
         public override void HandleBattle()
         {
-            
+            if (CanPrimaryAttack())
+            {
+                stateMachine.ChangeState(states[EState.Attack]);
+            }
+            else
+            {
+                stateMachine.ChangeState(states[EState.Idle]);
+            }
         }
 
         protected override void InitializeStates()
@@ -29,6 +36,7 @@ namespace Assets.Scripts.Characters.HeroTracker
             states.Add(EState.Fall, new FallState(this, stateMachine, EState.Air));
             states.Add(EState.Battle, new HeroTrackerBattleState(this, stateMachine, EState.Move));
             states.Add(EState.Jump, new JumpState(this, stateMachine, EState.Air));
+            states.Add(EState.Attack, new EnemyAttackState(this, stateMachine, EState.Attack, comboWindow));
         }
 
         protected override void StateController()
