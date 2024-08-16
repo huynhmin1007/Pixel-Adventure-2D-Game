@@ -20,34 +20,58 @@ namespace Assets.Scripts.Characters.Enemy
         public override void Enter()
         {
             base.Enter();
+            /**
+             * Character = enemy
+             * Đặt lại vận tốc của enemy 
+             * stateTimer (thời gian tối đa enemy đuổi theo player (tránh di chuyển vào gốc tường xong bị kẹt))
+             */
             player = PlayerManager.instance.player.transform;
             character.ResetVelocity();
+            stateTimer = character.BattleTime;
         }
 
         public override void Exit()
         {
             base.Exit();
+            AnimBoolName = EState.Move;
         }
 
         public override void Update()
         {
             base.Update();
 
+            /**
+             * Nếu enemy có thể batttle (tự cài đặt logic riêng với mỗi enemy)
+             * Cài lại thời gian theo đuổi 
+             */
+            if (character.CanBattle())
+            {
+                stateTimer = character.BattleTime;
+                return;
+            }
+            /**
+             * Nếu đuổi theo quá lâu hoặc player đi quá xa
+             * -> Ngừng theo đuổi
+             */
+            else if (stateTimer < 0
+                || Vector2.Distance(player.position, character.transform.position) > character.MaxFollowDistance)
+            {
+                stateMachine.ChangeState(character.GetState(EState.Idle));
+                return;
+            }
+
+            /**
+             * Nếu player phía sau enemy thì đi về sau lưng và ngược lại
+             */
             if (player.position.x > character.transform.position.x)
                 moveDir = 1;
             else if (player.position.x < character.transform.position.x)
                 moveDir = -1;
 
-            if (character.IsPlayerDetected())
-            {
-                stateTimer = character.BattleTime;
-                character.HandleBattle();
-                return;
-            }
-            else if (stateTimer < 0
-                || Vector2.Distance(player.position, character.transform.position) > character.MaxFollowDistance)
-                stateMachine.ChangeState(character.GetState(EState.Idle));
-
+            /**
+             * Đổi sang Animation Move và di chuyển về phía player
+             */
+            stateMachine.ChangeAnimation(EState.Move);
             character.SetVelocity(character.MoveSpeed * moveDir, character.YVelocity, true);
         }
     }

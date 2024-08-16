@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Common;
+﻿using Assets.Scripts.Characters.Enemy;
+using Assets.Scripts.Common;
 using System;
 
 namespace Assets.Scripts.Base.State
@@ -19,7 +20,7 @@ namespace Assets.Scripts.Base.State
             base.Update();
             characterBase.animator.SetFloat("yVelocity", characterBase.YVelocity);
 
-            if (characterBase.IsWallDetected())
+            if (characterBase.IsWallDetected() && !(characterBase is EnemyCharacter))
                 stateMachine.ChangeState(characterBase.GetState(EState.WallSlide));
         }
     }
