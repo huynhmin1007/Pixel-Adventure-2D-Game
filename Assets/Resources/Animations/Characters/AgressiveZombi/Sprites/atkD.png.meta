@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29da6ada1437a3c47ab192acf3667b13
-      internalID: -218964137
+      spriteID: 4fe6929f336dcb5418bc97854813785a
+      internalID: 470009574
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0361a4585aae47c4aa74a1362f858582
-      internalID: 1487279309
+      spriteID: ab68e0a2909b4f34a91d5ca6f3fb4da4
+      internalID: 1927999070
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7d019ded3d77ad4485d882c8227616e
-      internalID: 332906189
+      spriteID: 0a09f9d1ffb9beb40b0a62e9463bf564
+      internalID: 1130805987
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16378b93c271d04e84297b9dda40287
-      internalID: 1791876263
+      spriteID: 1805cf4e90793324fae04e033cb5a7c8
+      internalID: 938545308
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc610c5df833a7a45ac61e6258942779
-      internalID: 1573097482
+      spriteID: 67f68e28321b6a6458d3a6bcce26d4b2
+      internalID: 1403406048
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68e72dd474312dd41b1847795dc5ad5e
-      internalID: 2111457825
+      spriteID: 08a3fd5196da79841b1ab3f7f0f3061c
+      internalID: 2088157083
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      atkD_0: -218964137
-      atkD_1: 1487279309
-      atkD_2: 332906189
-      atkD_3: 1791876263
-      atkD_4: 1573097482
-      atkD_5: 2111457825
+      atkD_0: 470009574
+      atkD_1: 1927999070
+      atkD_2: 1130805987
+      atkD_3: 938545308
+      atkD_4: 1403406048
+      atkD_5: 2088157083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
