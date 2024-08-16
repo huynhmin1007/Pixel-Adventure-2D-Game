@@ -32,18 +32,15 @@ namespace Assets.Scripts.Characters.Enemy
         {
             base.Update();
 
+            /**
+             * Nếu phát hiện Player (tia thẳng màu vàng) hoặc Player ở 1 khoảng cách nhất định phía sau lưng
+             * -> Vào trạng thái battle
+             */
             if (character.IsPlayerDetected()
-                || Vector2.Distance(character.transform.position, player.position) < character.BackPlayerCheckDistance)
+                 || Vector2.Distance(character.transform.position, player.position) < character.BackPlayerCheckDistance)
             {
-                if (character.CanBattle())
-                    stateMachine.ChangeState(character.GetState(EState.Battle));
-                else if (!character.IsPlayerInAttackRange())
-                {
-                    if (player.position.x > character.transform.position.x)
-                        character.XInput = 1;
-                    else if (player.position.x < character.transform.position.x)
-                        character.XInput = -1;
-                }
+                stateMachine.ChangeState(character.GetState(EState.Battle));
+                return;
             }
         }
     }

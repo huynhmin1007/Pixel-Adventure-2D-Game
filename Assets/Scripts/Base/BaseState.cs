@@ -40,5 +40,12 @@ namespace Assets.Scripts.Base
         {
             triggerCalled = true;
         }
+
+        public void ChangeAnimation(Enum _animBoolName)
+        {
+            characterBase.animator.SetBool(AnimBoolName.ToString(), false);
+            characterBase.animator.SetBool(_animBoolName.ToString(), true);
+            AnimBoolName = _animBoolName;
+        }
     }
 }

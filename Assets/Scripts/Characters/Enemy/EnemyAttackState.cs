@@ -12,6 +12,7 @@ namespace Assets.Scripts.Characters.Enemy
         private Transform player;
         private int comboCounter;
         private int comboWindow;
+        private float lastTimeSignleAttacked;
 
         public EnemyAttackState(EnemyCharacter characterBase, StateMachine stateMachine, Enum animBoolName, int comboWindow)
             : base(characterBase, stateMachine, animBoolName)
@@ -24,11 +25,12 @@ namespace Assets.Scripts.Characters.Enemy
         {
             base.Enter();
 
-            character.LastTimeAttacked = Time.time;
             player = PlayerManager.instance.player.transform;
 
-            if (comboCounter > comboWindow || Time.time >= character.LastTimeAttacked + comboWindow)
+            if (comboCounter > comboWindow || Time.time >= lastTimeSignleAttacked + comboWindow)
+            {
                 comboCounter = 0;
+            }
 
             characterBase.animator.SetInteger("ComboCounter", comboCounter);
 
@@ -37,7 +39,7 @@ namespace Assets.Scripts.Characters.Enemy
                 character.Flip();
             }
 
-            if (characterBase.AttackMove.Length > 0)
+            if (comboCounter < characterBase.AttackMove.Length)
             {
                 float xVelocity = !characterBase.IsGrounded() ? characterBase.MoveSpeed * .2f : 1;
                 characterBase.SetVelocity(
@@ -54,7 +56,14 @@ namespace Assets.Scripts.Characters.Enemy
             base.Exit();
 
             comboCounter++;
-            character.LastTimeAttacked = Time.time;
+            float time = Time.time;
+
+            lastTimeSignleAttacked = time;
+
+            if (comboCounter > comboWindow || time >= lastTimeSignleAttacked + comboWindow)
+            {
+                character.LastTimeAttacked = time;
+            }
         }
 
         public override void Update()

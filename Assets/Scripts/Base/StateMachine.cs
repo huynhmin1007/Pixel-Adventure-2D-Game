@@ -31,14 +31,20 @@ namespace Assets.Scripts.Base
             }
         }
 
-        public bool IsAnimation(Enum animBoolName)
+        public bool IsAnimation(Enum _animBoolName)
         {
-            return CurrentState.AnimBoolName.Equals(animBoolName);
+            return CurrentState.AnimBoolName.Equals(_animBoolName);
         }
 
         public Enum GetCurrentAnimation()
         {
             return CurrentState.AnimBoolName;
+        }
+
+        public void ChangeAnimation(Enum _animBoolName)
+        {
+            if (!IsAnimation(_animBoolName))
+                currentState.ChangeAnimation(_animBoolName);
         }
     }
 }
