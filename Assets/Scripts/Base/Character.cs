@@ -28,6 +28,7 @@ public abstract class Character : MonoBehaviour
     [Header("Attack")]
     [SerializeField] protected int comboWindow;
     [SerializeField] protected Vector2[] attackMove;
+    [SerializeField] protected Collider2D hitboxAttack;
     #endregion
 
     [Header("Knockback")]
@@ -165,4 +166,5 @@ public abstract class Character : MonoBehaviour
 
     public RaycastHit2D IsGrounded() => groundCheck.Check(groundLayer);
     public RaycastHit2D IsWallDetected() => wallCheck.Check(groundLayer);
+    public Collider2D Hitbox { get => hitboxAttack; set => hitboxAttack = value; }
 }
