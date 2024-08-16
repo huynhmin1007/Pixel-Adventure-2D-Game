@@ -23,7 +23,6 @@ namespace Assets.Scripts.Characters.Enemy
         protected bool canBeStunned;
         [SerializeField] protected GameObject warningImage;
 
-        [SerializeField] protected Collider2D hitboxAttack;
 
         public float IdleTime { get => idleTime; set => idleTime = value; }
         protected override void Start()
@@ -83,7 +82,6 @@ namespace Assets.Scripts.Characters.Enemy
         public float StunDuration { get => stunDuration; set => stunDuration = value; }
         public Vector2 StunDirection { get => stunDirection; set => stunDirection = value; }
         public bool CanBeStunned { get => canBeStunned; set => canBeStunned = value; }
-        protected Collider2D Hitbox { get => hitboxAttack; set => hitboxAttack = value; }
 
         public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(transform.position,
            Direction.ToVector2(), PlayerCheckDistance, playerLayer);

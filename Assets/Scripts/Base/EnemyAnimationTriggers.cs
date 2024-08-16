@@ -7,7 +7,7 @@ namespace Assets.Scripts.Base
     public class EnemyAnimationTriggers : MonoBehaviour
     {
         private EnemyCharacter enemy => GetComponentInParent<EnemyCharacter>();
-        private Collider2D hitbox => GetComponentInChildren<Collider2D>();
+        private Collider2D hitbox => enemy.Hitbox;
         public LayerMask playerLayer;
 
         private void AnimationTrigger() => enemy.AnimationTrigger();
