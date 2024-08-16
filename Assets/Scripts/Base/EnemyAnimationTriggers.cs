@@ -7,20 +7,23 @@ namespace Assets.Scripts.Base
     public class EnemyAnimationTriggers : MonoBehaviour
     {
         private EnemyCharacter enemy => GetComponentInParent<EnemyCharacter>();
+        private Collider2D hitbox => GetComponentInChildren<Collider2D>();
+        public LayerMask playerLayer;
 
         private void AnimationTrigger() => enemy.AnimationTrigger();
 
         private void AttackTrigger()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(enemy.AttackCheck.position, enemy.AttackCheckRadius);
-
-            foreach (Collider2D hit in colliders)
+            if (hitbox != null)
             {
-                PlayerCharacter player = hit.GetComponent<PlayerCharacter>();
-
-                if (player != null)
+                Collider2D hit = Physics2D.OverlapBox(hitbox.bounds.center, hitbox.bounds.size, 0, playerLayer);
+                if (hit != null && hit.CompareTag("Player"))
                 {
-                    player.Damage();
+                    PlayerCharacter player = PlayerManager.instance.player;
+                    if (player != null)
+                    {
+                        player.Damage();
+                    }
                 }
             }
         }
