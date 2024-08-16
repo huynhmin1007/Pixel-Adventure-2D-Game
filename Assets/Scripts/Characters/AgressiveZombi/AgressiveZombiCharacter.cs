@@ -8,7 +8,27 @@ namespace Assets.Scripts.Characters.AgressiveZombi
     {
         public override bool CanBattle()
         {
-            return false;
+            bool isPlayerDetected = IsPlayerDetected();
+
+            if (isPlayerDetected)
+            {
+                if (IsPlayerInAttackRange())
+                {
+                    if (CanPrimaryAttack())
+                    {
+                        stateMachine.ChangeState(states[EState.Attack]);
+                    }
+                    else
+                        stateMachine.ChangeAnimation(EState.Idle);
+                    return true;
+                }
+                else
+                {
+                    stateMachine.ChangeAnimation(EState.Move);
+                    SetVelocity(Direction.XValue() * MoveSpeed, YVelocity);
+                }
+            }
+            return isPlayerDetected;
         }
 
         protected override void InitializeStates()
@@ -19,11 +39,18 @@ namespace Assets.Scripts.Characters.AgressiveZombi
             states.Add(EState.Battle, new AgressiveZombiBattleState(this, stateMachine, EState.Move));
             states.Add(EState.Jump, new JumpState(this, stateMachine, EState.Air));
             states.Add(EState.Attack, new EnemyAttackState(this, stateMachine, EState.Attack, comboWindow));
+            states.Add(EState.Stunned, new EnemyStunnedState(this, stateMachine, EState.Stunned));
         }
 
         protected override void StateController()
         {
 
+        }
+
+        public override void Stun()
+        {
+            base.Stun();
+            stateMachine.ChangeState(states[EState.Stunned]);
         }
     }
 }
