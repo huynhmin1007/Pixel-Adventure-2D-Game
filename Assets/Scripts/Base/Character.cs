@@ -28,8 +28,6 @@ public abstract class Character : MonoBehaviour
     [Header("Attack")]
     [SerializeField] protected int comboWindow;
     [SerializeField] protected Vector2[] attackMove;
-    [SerializeField] protected Transform attackCheck;
-    [SerializeField] protected float attackCheckRadius;
     #endregion
 
     [Header("Knockback")]
@@ -121,9 +119,6 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void OnDrawGizmos()
     {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
-
         wallCheck.Draw();
         groundCheck.Draw();
     }
@@ -166,8 +161,6 @@ public abstract class Character : MonoBehaviour
     public int ComboWindow { get => comboWindow; set => comboWindow = value; }
     public bool IsBusy { get => isBusy; set => isBusy = value; }
     public Vector2[] AttackMove { get => attackMove; set => attackMove = value; }
-    public Transform AttackCheck { get => attackCheck; set => attackCheck = value; }
-    public float AttackCheckRadius { get => attackCheckRadius; set => attackCheckRadius = value; }
     public bool IsImmune { get => isImmune; set => isImmune = value; }
 
     public RaycastHit2D IsGrounded() => groundCheck.Check(groundLayer);

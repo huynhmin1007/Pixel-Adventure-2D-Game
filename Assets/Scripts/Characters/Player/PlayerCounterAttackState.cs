@@ -3,7 +3,6 @@ using Assets.Scripts.Characters.Enemy;
 using Assets.Scripts.Common;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Assets.Scripts.Characters.Player
 {
@@ -49,19 +48,19 @@ namespace Assets.Scripts.Characters.Player
 
         private void PerformCounterAttack()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(character.AttackCheck.position, character.AttackCheckRadius);
+            //Collider2D[] colliders = Physics2D.OverlapCircleAll(character.AttackCheck.position, character.AttackCheckRadius);
 
-            foreach (var hit in colliders)
-            {
-                var enemy = hit.GetComponent<EnemyCharacter>();
+            //foreach (var hit in colliders)
+            //{
+            //    var enemy = hit.GetComponent<EnemyCharacter>();
 
-                if (enemy != null && enemy.CanBeStunned && !stunnedEnemies.Contains(enemy))
-                {
-                    isCounterSuccessful = true;
-                    stunnedEnemies.Add(enemy);
-                    character.IsImmune = true;
-                }
-            }
+            //    if (enemy != null && enemy.CanBeStunned && !stunnedEnemies.Contains(enemy))
+            //    {
+            //        isCounterSuccessful = true;
+            //        stunnedEnemies.Add(enemy);
+            //        character.IsImmune = true;
+            //    }
+            //}
         }
 
         private void HandleCounterEnd()
