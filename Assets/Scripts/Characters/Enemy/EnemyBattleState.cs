@@ -8,7 +8,7 @@ namespace Assets.Scripts.Characters.Enemy
 {
     public class EnemyBattleState : BaseState
     {
-        private Transform player;
+        private PlayerCharacter player;
         private EnemyCharacter character;
         private float moveDir;
 
@@ -25,7 +25,7 @@ namespace Assets.Scripts.Characters.Enemy
              * Đặt lại vận tốc của enemy 
              * stateTimer (thời gian tối đa enemy đuổi theo player (tránh di chuyển vào gốc tường xong bị kẹt))
              */
-            player = PlayerManager.instance.player.transform;
+            player = PlayerManager.instance.player;
             character.ResetVelocity();
             stateTimer = character.BattleTime;
         }
@@ -39,6 +39,19 @@ namespace Assets.Scripts.Characters.Enemy
         public override void Update()
         {
             base.Update();
+
+            if (player.XVelocity == 0 && Mathf.Abs(player.transform.position.x - character.transform.position.x) <= 1)
+            {
+                if (player.transform.position.x > character.transform.position.x)
+                    moveDir = -1;
+                else if (player.transform.position.x < character.transform.position.x)
+                    moveDir = 1;
+
+                stateMachine.ChangeAnimation(EState.Move);
+                character.SetVelocity(character.MoveSpeed * moveDir * 4, 0);
+
+                return;
+            }
 
             /**
              * Nếu enemy có thể batttle (tự cài đặt logic riêng với mỗi enemy)
@@ -54,7 +67,7 @@ namespace Assets.Scripts.Characters.Enemy
              * -> Ngừng theo đuổi
              */
             else if (stateTimer < 0
-                || Vector2.Distance(player.position, character.transform.position) > character.MaxFollowDistance)
+                || Vector2.Distance(player.transform.position, character.transform.position) > character.MaxFollowDistance)
             {
                 stateMachine.ChangeState(character.GetState(EState.Idle));
                 return;
@@ -63,9 +76,9 @@ namespace Assets.Scripts.Characters.Enemy
             /**
              * Nếu player phía sau enemy thì đi về sau lưng và ngược lại
              */
-            if (player.position.x > character.transform.position.x)
+            if (player.transform.position.x > character.transform.position.x)
                 moveDir = 1;
-            else if (player.position.x < character.transform.position.x)
+            else if (player.transform.position.x < character.transform.position.x)
                 moveDir = -1;
 
             /**

@@ -1,0 +1,1227 @@
+fileFormatVersion: 2
+guid: 6eb2e980b0c512a45b2b760faafc46c3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 121
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3467673dee07e84d9cf2ad5497b9252
+      internalID: 1471192226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 121
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc93f26405fe61448da5c540029b93e
+      internalID: 1051672194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0a226dbd446484c962820819202cb3
+      internalID: 614612289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa2c79a418bd664d8634fcdb9f9dc7b
+      internalID: 312086733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63087fe60b514240a41a4c4bd1bbb8d
+      internalID: -640127594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77915ca8bfc6e79468abc643928b3976
+      internalID: 2058484631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_6
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f42e161333c7049b7ef9773c2c4531
+      internalID: 1412509683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab37aecd28d991f44819b1fbf93a9a64
+      internalID: -1467674181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1263042535c0146adcb6f2bc5c0529
+      internalID: -1439432546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 97
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d1bb17c2c856d4eb79b920cca83292
+      internalID: -1178955247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc323f7c307e974eac0a6038e624eda
+      internalID: -637097865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_11
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0981ad441498be84bb59570d5e6fc616
+      internalID: 7594827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_12
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45362bf60a2c81b4986162a927b173f3
+      internalID: 1818624395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_13
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf647082a0c932e438c62bab85d2a9ba
+      internalID: 1257720049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3debba5b025bf9c49b791994e08731d5
+      internalID: -773992476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbae3bcf7cdd1d4f8982386110c0a8a
+      internalID: 1580584032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_16
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ae06ea81f3df945acdcc92b314c2cb
+      internalID: 767677725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_17
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d455a774ea6b047949d29f55913250
+      internalID: -158309987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a07e9f1edceb74abde59f4a54dbdca
+      internalID: 1313827345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_19
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 73
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2197ef5a23958724e9879552f153c6c1
+      internalID: -1243400143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69b0053fbc546f459de626b6140829d
+      internalID: -1062233543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_21
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd0a17cf4a2096488fdfac59914d5c4
+      internalID: 1110751359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_22
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c36a1169fbc924bb6a6313f0816551
+      internalID: -1280545362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_23
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e425e85cead7fc4ca20649516b121cd
+      internalID: 392096799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a399bdc086c99e4d94ea4126e06686c
+      internalID: 205164246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_25
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ae91d39f26a7f46b8e696302c55077
+      internalID: -1136507052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_26
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd385db4119c0e74f8cad75d9c8855ca
+      internalID: -278240809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_27
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50303504710969a43b124323265393c0
+      internalID: 1832619115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdde0354968c0f342ab2b042982b0d17
+      internalID: 133268558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_29
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 49
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1763d1e2cc54641831f0bea5cc585b
+      internalID: -291401224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9b121dfba99124aa00d33311097c8b
+      internalID: -1767405884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_31
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ea9cc5a0b935d49a3102bd2b0e6f00
+      internalID: 1523391373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_32
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1826bce3c9f1c4ba39e0c2258a3d95
+      internalID: -683048469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_33
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb9cb988971b52498ab4ec54f2db882
+      internalID: 1277557557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629a8f677a6a2764c87e34ef0046e46d
+      internalID: -1955844123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_35
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b89d2c75648b24d8406b3c14c59c1f
+      internalID: 1724817638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_36
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224cf62315b956d4292a4a4c2fddfccb
+      internalID: -1225267029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_37
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada14624199338d42ba09abd1e0826e9
+      internalID: 1039293936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883828015a32a974c8a4339bb40b4f1c
+      internalID: -1957070230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_39
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 25
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f89800deb55634bbbb1abb3edbac94
+      internalID: -20861154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560af3967e954cf49869a72e241a3f3d
+      internalID: -771340135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_41
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e0527ef70d9ff4db5cb6411f8abf1f
+      internalID: 1462646171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_42
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a287d38fab54bcb41b0c4962f26069b1
+      internalID: 1342979802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_43
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3d8e091f52b504b844f1e5939bf635
+      internalID: 1116255966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_44
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd5d65227d3ae747acda1a4e0eb5a26
+      internalID: 206003902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_45
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f72e1b2e1daf04bb1cb1b35c5fbcbc
+      internalID: -1543749042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_46
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81df174393165f24f9cfa1eab7568ba3
+      internalID: 358712977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_47
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4daf5aef48a9f6244a60c7f3012741cd
+      internalID: -1068560252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_48
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230c06e08b973eb4191c241af44d9bf8
+      internalID: -2038788720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exitDoorDistillery-=-0-=-_49
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9906b9831526264c98b24f867e71b6b
+      internalID: 409734495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      exitDoorDistillery-=-0-=-_0: 1471192226
+      exitDoorDistillery-=-0-=-_1: 1051672194
+      exitDoorDistillery-=-0-=-_10: -637097865
+      exitDoorDistillery-=-0-=-_11: 7594827
+      exitDoorDistillery-=-0-=-_12: 1818624395
+      exitDoorDistillery-=-0-=-_13: 1257720049
+      exitDoorDistillery-=-0-=-_14: -773992476
+      exitDoorDistillery-=-0-=-_15: 1580584032
+      exitDoorDistillery-=-0-=-_16: 767677725
+      exitDoorDistillery-=-0-=-_17: -158309987
+      exitDoorDistillery-=-0-=-_18: 1313827345
+      exitDoorDistillery-=-0-=-_19: -1243400143
+      exitDoorDistillery-=-0-=-_2: 614612289
+      exitDoorDistillery-=-0-=-_20: -1062233543
+      exitDoorDistillery-=-0-=-_21: 1110751359
+      exitDoorDistillery-=-0-=-_22: -1280545362
+      exitDoorDistillery-=-0-=-_23: 392096799
+      exitDoorDistillery-=-0-=-_24: 205164246
+      exitDoorDistillery-=-0-=-_25: -1136507052
+      exitDoorDistillery-=-0-=-_26: -278240809
+      exitDoorDistillery-=-0-=-_27: 1832619115
+      exitDoorDistillery-=-0-=-_28: 133268558
+      exitDoorDistillery-=-0-=-_29: -291401224
+      exitDoorDistillery-=-0-=-_3: 312086733
+      exitDoorDistillery-=-0-=-_30: -1767405884
+      exitDoorDistillery-=-0-=-_31: 1523391373
+      exitDoorDistillery-=-0-=-_32: -683048469
+      exitDoorDistillery-=-0-=-_33: 1277557557
+      exitDoorDistillery-=-0-=-_34: -1955844123
+      exitDoorDistillery-=-0-=-_35: 1724817638
+      exitDoorDistillery-=-0-=-_36: -1225267029
+      exitDoorDistillery-=-0-=-_37: 1039293936
+      exitDoorDistillery-=-0-=-_38: -1957070230
+      exitDoorDistillery-=-0-=-_39: -20861154
+      exitDoorDistillery-=-0-=-_4: -640127594
+      exitDoorDistillery-=-0-=-_40: -771340135
+      exitDoorDistillery-=-0-=-_41: 1462646171
+      exitDoorDistillery-=-0-=-_42: 1342979802
+      exitDoorDistillery-=-0-=-_43: 1116255966
+      exitDoorDistillery-=-0-=-_44: 206003902
+      exitDoorDistillery-=-0-=-_45: -1543749042
+      exitDoorDistillery-=-0-=-_46: 358712977
+      exitDoorDistillery-=-0-=-_47: -1068560252
+      exitDoorDistillery-=-0-=-_48: -2038788720
+      exitDoorDistillery-=-0-=-_49: 409734495
+      exitDoorDistillery-=-0-=-_5: 2058484631
+      exitDoorDistillery-=-0-=-_6: 1412509683
+      exitDoorDistillery-=-0-=-_7: -1467674181
+      exitDoorDistillery-=-0-=-_8: -1439432546
+      exitDoorDistillery-=-0-=-_9: -1178955247
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

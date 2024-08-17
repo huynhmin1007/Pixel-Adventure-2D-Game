@@ -23,6 +23,7 @@ namespace Assets.Scripts.Characters.Enemy
         protected bool canBeStunned;
         [SerializeField] protected GameObject warningImage;
 
+
         public float IdleTime { get => idleTime; set => idleTime = value; }
         protected override void Start()
         {
@@ -86,6 +87,6 @@ namespace Assets.Scripts.Characters.Enemy
            Direction.ToVector2(), PlayerCheckDistance, playerLayer);
 
         public virtual Collider2D IsPlayerInAttackRange()
-            => Physics2D.OverlapCircle(attackCheck.position, attackCheckRadius, playerLayer);
+            => Physics2D.OverlapBox(Hitbox.bounds.center, Hitbox.bounds.size, 0, playerLayer);
     }
 }

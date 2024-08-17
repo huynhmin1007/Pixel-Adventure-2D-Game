@@ -49,12 +49,11 @@ namespace Assets.Scripts.Characters.Player
 
         private void PerformCounterAttack()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(character.AttackCheck.position, character.AttackCheckRadius);
-
-            foreach (var hit in colliders)
+            Collider2D[] hitColliders = Physics2D.OverlapBoxAll(character.Hitbox.bounds.center,
+                character.Hitbox.bounds.size, 0);
+            foreach (var hitCollider in hitColliders)
             {
-                var enemy = hit.GetComponent<EnemyCharacter>();
-
+                EnemyCharacter enemy = hitCollider.GetComponent<EnemyCharacter>();
                 if (enemy != null && enemy.CanBeStunned && !stunnedEnemies.Contains(enemy))
                 {
                     isCounterSuccessful = true;
