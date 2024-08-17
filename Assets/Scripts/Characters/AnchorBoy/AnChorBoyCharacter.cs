@@ -19,17 +19,17 @@ namespace Assets.Scripts.Characters.AnchorBoy
 
         }
 
-        public override void HandleBattle()
-        {
-            if (CanPrimaryAttack())
-            {
-                stateMachine.ChangeState(states[EState.Attack]);
-            }
-            else
-            {
-                stateMachine.ChangeState(states[EState.Idle]);
-            }
-        }
+        //public override void HandleBattle()
+        //{
+        //    if (CanPrimaryAttack())
+        //    {
+        //        stateMachine.ChangeState(states[EState.Attack]);
+        //    }
+        //    else
+        //    {
+        //        stateMachine.ChangeState(states[EState.Idle]);
+        //    }
+        //}
 
         protected override void InitializeStates()
         {

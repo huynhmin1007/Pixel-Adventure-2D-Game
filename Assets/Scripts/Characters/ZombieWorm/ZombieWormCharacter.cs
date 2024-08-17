@@ -17,17 +17,17 @@ namespace Assets.Scripts.Characters.ZombieWorm
             return CanPrimaryAttack();
         }
 
-        public override void HandleBattle()
-        {
-            if (CanPrimaryAttack())
-            {
-                stateMachine.ChangeState(states[EState.Attack]);
-            }
-            else
-            {
-                stateMachine.ChangeState(states[EState.Idle]);
-            }
-        }
+        //public override void HandleBattle()
+        //{
+        //    if (CanPrimaryAttack())
+        //    {
+        //        stateMachine.ChangeState(states[EState.Attack]);
+        //    }
+        //    else
+        //    {
+        //        stateMachine.ChangeState(states[EState.Idle]);
+        //    }
+        //}
 
         protected override void InitializeStates()
         {
