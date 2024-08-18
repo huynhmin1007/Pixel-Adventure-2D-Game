@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Characters.Player;
+using UnityEngine;
 
 namespace Assets.Scripts.Characters.Skills
 {
@@ -6,6 +7,12 @@ namespace Assets.Scripts.Characters.Skills
     {
         [SerializeField] protected float cooldown;
         protected float cooldownTimer;
+        protected PlayerCharacter player;
+
+        protected virtual void Start()
+        {
+            player = PlayerManager.instance.player;
+        }
 
         protected virtual void Update()
         {

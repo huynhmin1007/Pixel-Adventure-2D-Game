@@ -15,18 +15,31 @@ namespace Assets.Scripts.Base
         {
             if (hitbox != null)
             {
-                Collider2D[] hitColliders = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0);
-                foreach (var hitCollider in hitColliders)
+                hitbox.enabled = true;
+                Collider2D[] hitColliders = new Collider2D[10];
+                int hitCount = Physics2D.OverlapCollider(hitbox, new ContactFilter2D(), hitColliders);
+
+                for (int i = 0; i < hitCount; i++)
                 {
-                    EnemyCharacter enemy = hitCollider.GetComponent<EnemyCharacter>();
-                    if (enemy != null)
+                    Collider2D hit = hitColliders[i];
+                    if (hit != null)
                     {
-                        enemy.Damage();
+                        EnemyCharacter enemy = hit.GetComponent<EnemyCharacter>();
+                        if (enemy != null)
+                        {
+                            enemy.Damage();
+                        }
                     }
                 }
+                hitbox.enabled = false;
             }
         }
 
         private void AnimationEndCounterTrigger() => player.AnimationEndCounterTrigger();
+
+        private void ThrowSword()
+        {
+            SkillManager.instance.sword.CreateSword();
+        }
     }
 }

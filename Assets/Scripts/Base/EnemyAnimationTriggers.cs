@@ -16,13 +16,23 @@ namespace Assets.Scripts.Base
         {
             if (hitbox != null)
             {
-                Collider2D hit = Physics2D.OverlapBox(hitbox.bounds.center, hitbox.bounds.size, 0, playerLayer);
-                if (hit != null && hit.CompareTag("Player"))
+                ContactFilter2D filter = new ContactFilter2D();
+                filter.SetLayerMask(playerLayer);
+                filter.useLayerMask = true;
+
+                Collider2D[] hitColliders = new Collider2D[10];
+                int hitCount = Physics2D.OverlapCollider(hitbox, filter, hitColliders);
+
+                for (int i = 0; i < hitCount; i++)
                 {
-                    PlayerCharacter player = PlayerManager.instance.player;
-                    if (player != null)
+                    Collider2D hit = hitColliders[i];
+                    if (hit != null && hit.CompareTag("Player"))
                     {
-                        player.Damage();
+                        PlayerCharacter player = PlayerManager.instance.player;
+                        if (player != null)
+                        {
+                            player.Damage();
+                        }
                     }
                 }
             }
