@@ -18,6 +18,7 @@ public abstract class Character : MonoBehaviour
     #region Movement
     [Header("Movement")]
     [SerializeField] protected float moveSpeed;
+    protected float defaultMoveSpeed;
     [SerializeField] protected float jumpForce;
     [SerializeField] protected Direction direction = Direction.RIGHT;
 
@@ -29,6 +30,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected int comboWindow;
     [SerializeField] protected Vector2[] attackMove;
     [SerializeField] protected Collider2D hitboxAttack;
+    [SerializeField] protected float freezeTime;
     #endregion
 
     [Header("Knockback")]
@@ -54,6 +56,11 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        flashFX = GetComponent<CharacterFlashFX>();
+
+        defaultMoveSpeed = moveSpeed;
         stateMachine = new StateMachine();
         states = new Dictionary<Enum, BaseState>();
 
@@ -62,10 +69,6 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Start()
     {
-        animator = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        flashFX = GetComponent<CharacterFlashFX>();
-
         stateMachine.Initialize(states[EState.Idle]);
     }
 
@@ -131,6 +134,7 @@ public abstract class Character : MonoBehaviour
             flashFX.StartCoroutine("FlashFX");
             StartCoroutine("HitKnockback");
         }
+        else return;
     }
 
     protected virtual IEnumerator HitKnockback()
@@ -154,6 +158,29 @@ public abstract class Character : MonoBehaviour
         return Mathf.Abs(value) < threshold;
     }
 
+    public virtual void FrozenTime(bool _timeFrozen)
+    {
+        if (_timeFrozen)
+        {
+            moveSpeed = 0;
+            animator.speed = 0;
+        }
+        else
+        {
+            moveSpeed = defaultMoveSpeed;
+            animator.speed = 1;
+        }
+    }
+
+    protected virtual IEnumerator FreezeTimeFor(float seconds)
+    {
+        FrozenTime(true);
+
+        yield return new WaitForSeconds(seconds);
+
+        FrozenTime(false);
+    }
+
     public float XVelocity => IsNearlyZero(rb.velocity.x) ? 0 : rb.velocity.x;
     public float YVelocity => IsNearlyZero(rb.velocity.y) ? 0 : rb.velocity.y;
 
@@ -167,4 +194,5 @@ public abstract class Character : MonoBehaviour
     public RaycastHit2D IsGrounded() => groundCheck.Check(groundLayer);
     public RaycastHit2D IsWallDetected() => wallCheck.Check(groundLayer);
     public Collider2D Hitbox { get => hitboxAttack; set => hitboxAttack = value; }
+    public float FreezeTime { get => freezeTime; set => freezeTime = value; }
 }
