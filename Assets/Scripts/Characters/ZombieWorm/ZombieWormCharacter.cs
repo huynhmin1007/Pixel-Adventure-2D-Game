@@ -34,7 +34,8 @@ namespace Assets.Scripts.Characters.ZombieWorm
             states.Add(EState.Idle, new EnemyIdleState(this, stateMachine, EState.Idle));
             states.Add(EState.Move, new EnemyMoveState(this, stateMachine, EState.Move));
             states.Add(EState.Fall, new FallState(this, stateMachine, EState.Air));
-            states.Add(EState.Battle, new ZombieWormBattleState(this, stateMachine, EState.Move));
+            //states.Add(EState.Battle, new ZombieWormBattleState(this, stateMachine, EState.Move));
+            states.Add(EState.Battle, new EnemyMoveState(this, stateMachine, EState.Move)); // Thay thế tạm thời
             states.Add(EState.Jump, new JumpState(this, stateMachine, EState.Air));
             states.Add(EState.Attack, new EnemyAttackState(this, stateMachine, EState.Attack, comboWindow));
             states.Add(EState.Stunned, new EnemyStunnedState(this, stateMachine, EState.Stunned));

@@ -40,15 +40,15 @@ namespace Assets.Scripts.Characters.Enemy
         {
             base.Update();
 
-            if (player.XVelocity == 0 && Mathf.Abs(player.transform.position.x - character.transform.position.x) <= 1)
+            if (player.XVelocity == 0 && Vector2.Distance(character.Hitbox.bounds.min, player.transform.position) <= 1)
             {
-                if (player.transform.position.x > character.transform.position.x)
+                if (player.transform.position.x > character.Hitbox.bounds.min.x)
                     moveDir = -1;
-                else if (player.transform.position.x < character.transform.position.x)
+                else if (player.transform.position.x < character.Hitbox.bounds.min.x)
                     moveDir = 1;
 
                 stateMachine.ChangeAnimation(EState.Move);
-                character.SetVelocity(character.MoveSpeed * moveDir * 4, 0);
+                character.SetVelocity(character.MoveSpeed * moveDir * 4, 4);
 
                 return;
             }

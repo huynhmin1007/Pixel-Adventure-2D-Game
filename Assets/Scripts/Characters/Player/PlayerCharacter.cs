@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Base.State;
 using Assets.Scripts.Characters.Parameters;
+using Assets.Scripts.Characters.Skills;
 using Assets.Scripts.Common;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Assets.Scripts.Characters.Player
         [Header("Movement")]
         [SerializeField] private int maxJumpCount;
         private int jumpCount;
+        [SerializeField] private float swordReturnImpact;
 
         [SerializeField] private Dash dash;
 
@@ -19,6 +21,7 @@ namespace Assets.Scripts.Characters.Player
         private float counterTimer;
 
         public SkillManager skill { get; private set; }
+        public GameObject sword;
 
         #endregion
 
@@ -54,6 +57,8 @@ namespace Assets.Scripts.Characters.Player
             states.Add(EState.WallJump, new WallJumpState(this, stateMachine, EState.Air));
             states.Add(EState.Attack, new PrimaryAttackState(this, stateMachine, EState.Attack, ComboWindow));
             states.Add(EState.CounterAttack, new PlayerCounterAttackState(this, stateMachine, EState.CounterAttack));
+            states.Add(EPlayerState.AimSword, new PlayerAimSwordState(this, stateMachine, EPlayerState.AimSword));
+            states.Add(EPlayerState.CatchSword, new PlayerCatchSwordState(this, stateMachine, EPlayerState.CatchSword));
         }
 
         protected override void StateController()
@@ -61,7 +66,11 @@ namespace Assets.Scripts.Characters.Player
             XInput = Input.GetAxisRaw("Horizontal");
             YInput = Input.GetAxisRaw("Vertical");
 
-            if (Input.GetKeyDown(KeyCode.Mouse1) && stateMachine.CurrentState is GroundedState && counterTimer < 0)
+            if (Input.GetKeyDown(KeyCode.Tab) && HasNoSword())
+            {
+                stateMachine.ChangeState(states[EPlayerState.AimSword]);
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse1) && stateMachine.CurrentState is GroundedState && counterTimer < 0)
             {
                 counterTimer = counterCooldown;
                 stateMachine.ChangeState(states[EState.CounterAttack], true);
@@ -83,7 +92,31 @@ namespace Assets.Scripts.Characters.Player
 
         public int MaxJumpCount { get => maxJumpCount; set => maxJumpCount = value; }
         public int JumpCount { get => jumpCount; set => jumpCount = value; }
+        public float SwordReturnImpact { get => swordReturnImpact; set => swordReturnImpact = value; }
+
         public void AnimationEndCounterTrigger()
             => ((PlayerCounterAttackState)states[EState.CounterAttack]).AnimationEndCounterTrigger();
+
+        public void AssignNewSword(GameObject _newSword)
+        {
+            sword = _newSword;
+        }
+
+        public void CatchSword()
+        {
+            stateMachine.ChangeState(states[EPlayerState.CatchSword]);
+            Destroy(sword);
+        }
+
+        private bool HasNoSword()
+        {
+            if (!sword)
+            {
+                return true;
+            }
+
+            sword.GetComponent<SwordSkillController>().ReturnSword();
+            return false;
+        }
     }
 }

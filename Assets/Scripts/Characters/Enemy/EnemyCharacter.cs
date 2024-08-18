@@ -23,7 +23,6 @@ namespace Assets.Scripts.Characters.Enemy
         protected bool canBeStunned;
         [SerializeField] protected GameObject warningImage;
 
-
         public float IdleTime { get => idleTime; set => idleTime = value; }
         protected override void Start()
         {
@@ -70,8 +69,12 @@ namespace Assets.Scripts.Characters.Enemy
             return false;
         }
 
-        public abstract bool CanBattle();
+        public override void Damage()
+        {
+            base.Damage();
+        }
 
+        public abstract bool CanBattle();
 
         public float PlayerCheckDistance { get => playerCheckDistance; set => playerCheckDistance = value; }
         public float LastTimeAttacked { get => lastTimeAttacked; set => lastTimeAttacked = value; }

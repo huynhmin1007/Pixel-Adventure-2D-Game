@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Characters.AnchorBoy
 {
-    internal class AnchorBoyBattleState : EnemyBattleState
+    public class AnchorBoyBattleState : EnemyBattleState
     {
 
         private AnChorBoyCharacter character;

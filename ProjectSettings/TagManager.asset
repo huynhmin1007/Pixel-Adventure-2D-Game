@@ -12,31 +12,10 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
   - Enemy
   - Chain
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Sword
+  - Hitbox
   m_SortingLayers:
   - name: Default
     uniqueID: 0
