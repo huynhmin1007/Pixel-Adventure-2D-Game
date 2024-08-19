@@ -11,11 +11,32 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Player
+  - Post processing
   - Enemy
   - Chain
   - Sword
   - Hitbox
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
