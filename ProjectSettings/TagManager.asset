@@ -11,12 +11,12 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Player
-  - 
+  - Post processing
   - Enemy
+  - Chain
   - Sword
   - Hitbox
-  - 
+  - Player
   - 
   - 
   - 
@@ -44,12 +44,24 @@ TagManager:
   - name: Background
     uniqueID: 193587897
     locked: 0
+  - name: Background_1
+    uniqueID: 472765413
+    locked: 0
   - name: Ground
     uniqueID: 1092830743
+    locked: 0
+  - name: Decor
+    uniqueID: 2858113003
+    locked: 0
+  - name: Decor_1
+    uniqueID: 844196359
     locked: 0
   - name: Enemy
     uniqueID: 2507704591
     locked: 0
   - name: Player
     uniqueID: 4112892415
+    locked: 0
+  - name: Chain
+    uniqueID: 2608069399
     locked: 0
