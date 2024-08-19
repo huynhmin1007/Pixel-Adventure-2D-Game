@@ -11,12 +11,12 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Post processing
+  - Player
   - Enemy
   - Chain
   - Sword
   - Hitbox
-  - Player
+  - Post processing
   - 
   - 
   - 
