@@ -16,14 +16,20 @@ namespace Assets.Scripts.Characters.Player
 
         public override void Enter()
         {
+            if (character.IsGrounded()) character.JumpCount = 0;
+
             if (characterBase.XInput == characterBase.Direction.XValue() && characterBase.IsWallDetected())
             {
                 return;
             }
-
             base.Enter();
+        }
 
-            if (character.IsGrounded()) character.JumpCount = 0;
+        public override void Update()
+        {
+            base.Update();
+
+
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Characters.Enemy;
-using Assets.Scripts.Characters.Player;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ namespace Assets.Scripts.Characters.Skills
         private Animator animator;
         private Rigidbody2D rb;
         private CircleCollider2D cd;
-        private PlayerCharacter player;
+        private Character character;
 
         private bool canRotate = true;
         private bool isReturning;
@@ -40,6 +39,9 @@ namespace Assets.Scripts.Characters.Skills
 
         private float spinDirection;
 
+        private SwordSkill swordSkill;
+
+
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
@@ -47,13 +49,15 @@ namespace Assets.Scripts.Characters.Skills
             cd = GetComponent<CircleCollider2D>();
         }
 
-        public void SetupSword(Vector2 direction, float gravityScale, PlayerCharacter _player, float _freezeTimeDuration, float returnSpeed)
+        public void SetupSword(Vector2 direction, float gravityScale, Character _character, float _freezeTimeDuration, float _returnSpeed,
+            SwordSkill _swordSkill)
         {
-            player = _player;
+            swordSkill = _swordSkill;
+            character = _character;
             rb.velocity = direction;
             rb.gravityScale = gravityScale;
             freezeTimeDuration = _freezeTimeDuration;
-            returnSpeed = returnSpeed;
+            returnSpeed = _returnSpeed;
 
             if (pierceAmount <= 0)
                 animator.SetBool("Rotation", true);
@@ -70,11 +74,13 @@ namespace Assets.Scripts.Characters.Skills
 
             if (isReturning)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position,
+                transform.position = Vector2.MoveTowards(transform.position, character.transform.position,
                     returnSpeed * Time.deltaTime);
 
-                if (Vector2.Distance(transform.position, player.transform.position) < 1)
-                    player.CatchSword();
+                if (Vector2.Distance(transform.position, character.transform.position) < 1)
+                {
+                    swordSkill.TriggleCatchSword();
+                }
             }
 
             BounceLogic();
@@ -86,7 +92,7 @@ namespace Assets.Scripts.Characters.Skills
         {
             if (isSpinning)
             {
-                if (Vector2.Distance(player.transform.position, transform.position) > maxTravelDistance && !wasStopped)
+                if (Vector2.Distance(character.transform.position, transform.position) > maxTravelDistance && !wasStopped)
                 {
                     StopWhenSpinning();
                 }
@@ -245,7 +251,7 @@ namespace Assets.Scripts.Characters.Skills
             enemyTarget = new List<Transform>();
         }
 
-        public void SetupPiecer(int _pierceAmount)
+        public void SetupPierce(int _pierceAmount)
         {
             pierceAmount = _pierceAmount;
         }

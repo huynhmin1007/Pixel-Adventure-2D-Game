@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.Base;
 using Assets.Scripts.Common;
 using System;
-using UnityEngine;
 
 namespace Assets.Scripts.Characters.Player
 {
@@ -18,7 +17,7 @@ namespace Assets.Scripts.Characters.Player
         {
             base.Enter();
             character.ResetVelocity();
-            character.skill.sword.DotsActive(true);
+            //character.skill.sword.DotsActive(true);
         }
 
         public override void Exit()
@@ -30,20 +29,25 @@ namespace Assets.Scripts.Characters.Player
         {
             base.Update();
 
-            if (Input.GetKeyUp(KeyCode.Tab))
+            //if (Input.GetKeyUp(KeyCode.Tab))
+            //{
+            //    stateMachine.ChangeState(characterBase.GetState(EState.Idle));
+            //}
+
+            //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            //if (character.transform.position.x > mousePosition.x && character.Direction == Direction.RIGHT)
+            //{
+            //    character.Flip();
+            //}
+            //else if (character.transform.position.x < mousePosition.x && character.Direction == Direction.LEFT)
+            //{
+            //    character.Flip();
+            //}
+
+            if (triggerCalled)
             {
                 stateMachine.ChangeState(characterBase.GetState(EState.Idle));
-            }
-
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            if (character.transform.position.x > mousePosition.x && character.Direction == Direction.RIGHT)
-            {
-                character.Flip();
-            }
-            else if (character.transform.position.x < mousePosition.x && character.Direction == Direction.LEFT)
-            {
-                character.Flip();
             }
         }
     }

@@ -19,7 +19,7 @@ namespace Assets.Scripts.Characters.Player
         {
             base.Enter();
 
-            sword = character.sword.transform;
+            sword = character.swordObj.transform;
 
             if (character.transform.position.x > sword.position.x && character.Direction == Direction.RIGHT)
             {
