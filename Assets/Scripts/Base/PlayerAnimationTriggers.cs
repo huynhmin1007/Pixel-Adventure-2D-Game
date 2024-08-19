@@ -39,7 +39,7 @@ namespace Assets.Scripts.Base
 
         private void ThrowSword()
         {
-            SkillManager.instance.sword.CreateSword();
+            player.swordSkill.UseSkill();
         }
     }
 }

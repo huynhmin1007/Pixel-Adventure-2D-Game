@@ -11,26 +11,13 @@ namespace Assets.Scripts.Characters.Skills
         [Space]
         [SerializeField] private bool canAttack;
 
-        public override bool CanUseSkill()
-        {
-            return base.CanUseSkill();
-        }
-
-        public override void UseSkill()
-        {
-            base.UseSkill();
-        }
-
-        protected override void Update()
-        {
-            base.Update();
-        }
-
-        public void CreateClone(Transform clonePosition)
+        public void UseSkill(Transform clonePosition, Vector3 _offset)
         {
             GameObject newClone = Instantiate(clonePrefab);
 
-            newClone.GetComponent<CloneSkillController>().SetupClone(clonePosition, cloneDuration, canAttack);
+            newClone.GetComponent<CloneSkillController>().SetupClone(clonePosition, cloneDuration, canAttack, _offset);
+
+            base.UseSkill();
         }
     }
 }

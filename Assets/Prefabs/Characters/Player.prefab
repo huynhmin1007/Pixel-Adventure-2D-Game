@@ -67,7 +67,7 @@ Transform:
   - {fileID: 4042784326496295403}
   - {fileID: 9079883791574573454}
   - {fileID: 4974763040300010718}
-  - {fileID: 112939435885201524}
+  - {fileID: 8709006970774088212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &9145752658806490194
@@ -153,6 +153,7 @@ MonoBehaviour:
   - {x: 1, y: 2.5}
   - {x: 4, y: 1.5}
   hitboxAttack: {fileID: 5001931627704975349}
+  freezeTime: 0
   knockbackDirection: {x: 0, y: 0}
   knockBackDuration: 0
   groundCheck:
@@ -167,9 +168,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   maxJumpCount: 2
-  dash:
-    dashSpeed: 25
-    dashDuration: 0.2
+  swordReturnImpact: 2
   counterCooldown: 0.5
 --- !u!114 &555896486782488440
 MonoBehaviour:
@@ -413,7 +412,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5917480555176010677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7934172827509997458
+--- !u!1 &7234417613395183591
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -421,26 +420,104 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 112939435885201524}
-  m_Layer: 6
-  m_Name: AttackCheck
+  - component: {fileID: 8709006970774088212}
+  - component: {fileID: 6759664159976243740}
+  - component: {fileID: 6651747036074127992}
+  - component: {fileID: 8118473444841943742}
+  - component: {fileID: 3845632803887646433}
+  m_Layer: 0
+  m_Name: SkillManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &112939435885201524
+--- !u!4 &8709006970774088212
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7934172827509997458}
+  m_GameObject: {fileID: 7234417613395183591}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.13, y: -0.21, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5917480555176010677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6759664159976243740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234417613395183591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a807e8a0018ef4468c26a5908826aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.5
+  dashSpeed: 20
+  dashDuration: 0.2
+--- !u!114 &6651747036074127992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234417613395183591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e3dfbf3366b934e964205e217bf5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  clonePrefab: {fileID: 5502844656880108681, guid: 189924e64a9626f4ab9affa94e06b349, type: 3}
+  cloneDuration: 1.5
+  canAttack: 1
+--- !u!114 &8118473444841943742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234417613395183591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98caf5a5eb2e36439feca79c9eb735b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  swordType: 1
+  bounceAmount: 4
+  bounceGravity: 1
+  bounceSpeed: 20
+  pierceAmount: 2
+  pierceGravity: 1
+  hitCooldown: 0.35
+  maxTravelDistance: 7
+  spinDuration: 2
+  spinGravity: 1
+  swordPrefab: {fileID: 917423073060914362, guid: f2519cc20e6f1194abd123539782778c, type: 3}
+  launchForce: {x: 35, y: 25}
+  swordGravity: 0.5
+  freezeTimeDuration: 0.7
+  returnSpeed: 15
+--- !u!114 &3845632803887646433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234417613395183591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17cc9be3443a6340b39f386860e9443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  blackHolePrefab: {fileID: 8509497073389539564, guid: 6af840d5bdc01394abf60c3901454841, type: 3}
+  clonePrefab: {fileID: 5502844656880108681, guid: 189924e64a9626f4ab9affa94e06b349, type: 3}

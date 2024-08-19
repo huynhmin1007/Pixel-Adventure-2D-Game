@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Base.State;
+using System;
 
 namespace Assets.Scripts.Base
 {
@@ -22,6 +23,8 @@ namespace Assets.Scripts.Base
         public void ChangeState(BaseState newState, bool preventDuplicateState = false)
         {
             if (preventDuplicateState && currentState.AnimBoolName.Equals(newState.AnimBoolName)) return;
+
+            if (currentState is SkillState && ((SkillState)currentState).IsCasting) return;
 
             if (newState != null)
             {

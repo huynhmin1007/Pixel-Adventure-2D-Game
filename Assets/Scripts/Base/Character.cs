@@ -13,6 +13,7 @@ public abstract class Character : MonoBehaviour
     protected Rigidbody2D rb;
     public Animator animator { get; private set; }
     public CharacterFlashFX flashFX { get; private set; }
+    public SpriteRenderer sr { get; private set; }
     #endregion
 
     #region Movement
@@ -56,8 +57,9 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Awake()
     {
+        sr = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        Rb = GetComponent<Rigidbody2D>();
         flashFX = GetComponent<CharacterFlashFX>();
 
         defaultMoveSpeed = moveSpeed;
@@ -109,7 +111,7 @@ public abstract class Character : MonoBehaviour
         if (flip && ((Direction == Direction.LEFT && x > 0) || (Direction == Direction.RIGHT && x < 0)))
             Flip();
 
-        rb.velocity = new Vector2(x, y);
+        Rb.velocity = new Vector2(x, y);
     }
 
     public void ResetVelocity()
@@ -118,7 +120,7 @@ public abstract class Character : MonoBehaviour
 
         XInput = 0;
         YInput = 0;
-        rb.velocity = new Vector2(0, 0);
+        Rb.velocity = new Vector2(0, 0);
     }
 
     protected virtual void OnDrawGizmos()
@@ -141,11 +143,20 @@ public abstract class Character : MonoBehaviour
     {
         isKnocked = true;
 
-        rb.velocity = new Vector2(knockbackDirection.x * -Direction.XValue(), knockbackDirection.y);
+        Rb.velocity = new Vector2(knockbackDirection.x * -Direction.XValue(), knockbackDirection.y);
 
         yield return new WaitForSeconds(knockBackDuration);
 
         isKnocked = false;
+    }
+
+    public void Transparent(bool _transparent)
+    {
+        if (_transparent)
+        {
+            sr.color = Color.clear;
+        }
+        else sr.color = Color.white;
     }
 
     protected abstract void StateController();
@@ -181,8 +192,8 @@ public abstract class Character : MonoBehaviour
         FrozenTime(false);
     }
 
-    public float XVelocity => IsNearlyZero(rb.velocity.x) ? 0 : rb.velocity.x;
-    public float YVelocity => IsNearlyZero(rb.velocity.y) ? 0 : rb.velocity.y;
+    public float XVelocity => IsNearlyZero(Rb.velocity.x) ? 0 : Rb.velocity.x;
+    public float YVelocity => IsNearlyZero(Rb.velocity.y) ? 0 : Rb.velocity.y;
 
     public float XInput { get => xInput; set => xInput = value; }
     public float YInput { get => yInput; set => yInput = value; }
@@ -195,4 +206,5 @@ public abstract class Character : MonoBehaviour
     public RaycastHit2D IsWallDetected() => wallCheck.Check(groundLayer);
     public Collider2D Hitbox { get => hitboxAttack; set => hitboxAttack = value; }
     public float FreezeTime { get => freezeTime; set => freezeTime = value; }
+    public Rigidbody2D Rb { get => rb; set => rb = value; }
 }

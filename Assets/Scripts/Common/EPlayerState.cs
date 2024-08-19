@@ -2,6 +2,6 @@
 {
     public enum EPlayerState
     {
-        AimSword, CatchSword
+        AimSword, CatchSword, BlackHole
     }
 }
