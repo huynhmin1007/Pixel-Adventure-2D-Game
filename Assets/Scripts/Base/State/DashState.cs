@@ -19,7 +19,7 @@ namespace Assets.Scripts.Base.State
         public override void Enter()
         {
             base.Enter();
-            characterBase.IsImmune = true;
+
             stateTimer = dashDuration;
             characterBase.SetVelocity(dashSpeed * characterBase.Direction.XValue(), Mathf.Max(characterBase.YVelocity, 0));
         }
@@ -41,7 +41,6 @@ namespace Assets.Scripts.Base.State
         public override void Exit()
         {
             base.Exit();
-            characterBase.IsImmune = false;
         }
     }
 }

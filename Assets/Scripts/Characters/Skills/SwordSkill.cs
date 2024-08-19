@@ -1,9 +1,15 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Characters.Enemy;
+using Assets.Scripts.Common;
+using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Characters.Skills
 {
     public class SwordSkill : Skill
     {
+        public delegate void AssignSwordEventHandler(GameObject sword);
+        public event AssignSwordEventHandler OnAssignSword;
+
         public SwordType swordType = SwordType.Regular;
 
         [Header("Bounce info")]
@@ -22,29 +28,32 @@ namespace Assets.Scripts.Characters.Skills
         [SerializeField] private float spinGravity = 1;
 
         [Header("Skill info")]
-        [SerializeField] private GameObject swordPrefab;
+        public GameObject swordPrefab;
         [SerializeField] private Vector2 launchForce;
         [SerializeField] private float swordGravity;
         [SerializeField] private float freezeTimeDuration;
         [SerializeField] private float returnSpeed;
 
-        private Vector2 finalDirection;
+        //private Vector2 finalDirection;
 
-        [Header("Aim dots")]
-        [SerializeField] private int numberOfDots;
-        [SerializeField] private float spaceBeetwenDots;
-        [SerializeField] private GameObject dotPrefab;
-        [SerializeField] private Transform dotsParent;
+        //[Header("Aim dots")]
+        //[SerializeField] private int numberOfDots;
+        //[SerializeField] private float spaceBeetwenDots;
+        //[SerializeField] private GameObject dotPrefab;
+        //[SerializeField] private Transform dotsParent;
 
         private GameObject[] dots;
+        public Action OnCatchSword;
 
         protected override void Start()
         {
             base.Start();
 
-            GenerateDots();
+            //GenerateDots();
             SetupGravity();
         }
+
+        public void TriggleCatchSword() => OnCatchSword?.Invoke();
 
         private void SetupGravity()
         {
@@ -68,25 +77,25 @@ namespace Assets.Scripts.Characters.Skills
         {
             base.Update();
 
-            if (Input.GetKeyUp(KeyCode.Tab))
-            {
-                Vector2 direction = AimDirection();
-                finalDirection = new Vector2(direction.normalized.x * launchForce.x,
-                    direction.normalized.y * launchForce.y);
-            }
+            //if (Input.GetKeyUp(KeyCode.Tab))
+            //{
+            //    Vector2 direction = AimDirection();
+            //    finalDirection = new Vector2(direction.normalized.x * launchForce.x,
+            //        direction.normalized.y * launchForce.y);
+            //}
 
-            if (Input.GetKey(KeyCode.Tab))
-            {
-                for (int i = 0; i < dots.Length; i++)
-                {
-                    dots[i].transform.position = DotsPosition(i * spaceBeetwenDots);
-                }
-            }
+            //if (Input.GetKey(KeyCode.Tab))
+            //{
+            //    for (int i = 0; i < dots.Length; i++)
+            //    {
+            //        dots[i].transform.position = DotsPosition(i * spaceBeetwenDots);
+            //    }
+            //}
         }
 
-        public void CreateSword()
+        public override void UseSkill()
         {
-            GameObject newSword = Instantiate(swordPrefab, player.transform.position, transform.rotation);
+            GameObject newSword = Instantiate(swordPrefab, character.transform.position, transform.rotation);
             SwordSkillController newSwordScript = newSword.GetComponent<SwordSkillController>();
 
             switch (swordType)
@@ -96,7 +105,7 @@ namespace Assets.Scripts.Characters.Skills
                     break;
 
                 case SwordType.Pierce:
-                    newSwordScript.SetupPiecer(pierceAmount);
+                    newSwordScript.SetupPierce(pierceAmount);
                     break;
 
                 case SwordType.Spin:
@@ -104,51 +113,93 @@ namespace Assets.Scripts.Characters.Skills
                     break;
             }
 
-            newSwordScript.SetupSword(finalDirection, swordGravity, player, freezeTimeDuration, returnSpeed);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(character.transform.position, 25);
 
-            player.AssignNewSword(newSword);
+            float closestDistance = Mathf.Infinity;
+            Transform closestEnemy = null;
 
-            DotsActive(false);
-        }
+            Vector2 playerDirection = character.Direction.ToVector2();
 
-        public Vector2 AimDirection()
-        {
-            Vector2 playerPosition = player.transform.position;
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 direction = mousePosition - playerPosition;
-
-            return direction;
-        }
-
-        public void DotsActive(bool isActive)
-        {
-            for (int i = 0; i < dots.Length; i++)
+            foreach (Collider2D hit in colliders)
             {
-                dots[i].SetActive(isActive);
-            }
-        }
+                EnemyCharacter enemy = hit.GetComponent<EnemyCharacter>();
 
-        private void GenerateDots()
-        {
-            dots = new GameObject[numberOfDots];
-            for (int i = 0; i < numberOfDots; i++)
+                if (enemy != null)
+                {
+                    Vector2 directionToEnemy = (enemy.transform.position - character.transform.position).normalized;
+
+                    if (Vector2.Dot(playerDirection, directionToEnemy) > 0)
+                    {
+                        float distanceToEnemy = Vector2.Distance(character.transform.position, enemy.transform.position);
+
+                        if (distanceToEnemy < closestDistance)
+                        {
+                            closestDistance = distanceToEnemy;
+                            closestEnemy = enemy.transform;
+                        }
+                    }
+                }
+            }
+
+            Vector2 launchDirection;
+
+            if (closestEnemy != null)
             {
-                dots[i] = Instantiate(dotPrefab, player.transform.position, Quaternion.identity, dotsParent);
-                dots[i].SetActive(false);
+                launchDirection = (closestEnemy.position - character.transform.position).normalized * launchForce;
             }
+            else
+            {
+                launchDirection = playerDirection * launchForce;
+            }
+
+            newSwordScript.SetupSword(launchDirection, swordGravity, character, freezeTimeDuration, returnSpeed, this);
+
+            OnAssignSword?.Invoke(newSword);
+
+            // DotsActive(false);
+
+            base.UseSkill();
         }
 
-        private Vector2 DotsPosition(float t)
-        {
-            var direction = AimDirection();
-            Vector2 position = (Vector2)player.transform.position +
-                new Vector2(
-                    direction.normalized.x * launchForce.x,
-                    direction.normalized.y * launchForce.y) * t + .5f
-                    * (Physics2D.gravity * swordGravity) * (t * t);
 
-            return position;
-        }
+        //public Vector2 AimDirection()
+        //{
+        //    Vector2 playerPosition = player.transform.position;
+        //    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    Vector2 direction = mousePosition - playerPosition;
+
+        //    return direction;
+        //}
+
+        //public void DotsActive(bool isActive)
+        //{
+        //    for (int i = 0; i < dots.Length; i++)
+        //    {
+        //        dots[i].SetActive(isActive);
+        //    }
+        //}
+
+        //private void GenerateDots()
+        //{
+        //    dots = new GameObject[numberOfDots];
+        //    for (int i = 0; i < numberOfDots; i++)
+        //    {
+        //        dots[i] = Instantiate(dotPrefab, player.transform.position, Quaternion.identity, dotsParent);
+        //        dots[i].SetActive(false);
+        //    }
+        //}
+
+        //private Vector2 DotsPosition(float t)
+        //{
+        //    var direction = AimDirection();
+        //    Vector2 position = (Vector2)player.transform.position +
+        //        new Vector2(
+        //            direction.normalized.x * launchForce.x,
+        //            direction.normalized.y * launchForce.y) * t + .5f
+        //            * (Physics2D.gravity * swordGravity) * (t * t);
+
+        //    return position;
+        //}
     }
 
     public enum SwordType

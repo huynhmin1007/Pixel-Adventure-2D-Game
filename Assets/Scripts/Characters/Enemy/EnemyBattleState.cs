@@ -84,7 +84,13 @@ namespace Assets.Scripts.Characters.Enemy
             /**
              * Đổi sang Animation Move và di chuyển về phía player
              */
-            stateMachine.ChangeAnimation(EState.Move);
+
+            if (character.IsWallDetected())
+            {
+                stateMachine.ChangeAnimation(EState.Idle);
+            }
+            else
+                stateMachine.ChangeAnimation(EState.Move);
             character.SetVelocity(character.MoveSpeed * moveDir, character.YVelocity, true);
         }
     }

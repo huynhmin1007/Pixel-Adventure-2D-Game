@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Base.State;
-using Assets.Scripts.Characters.Parameters;
 using Assets.Scripts.Characters.Skills;
 using Assets.Scripts.Common;
 using UnityEngine;
@@ -14,22 +13,30 @@ namespace Assets.Scripts.Characters.Player
         private int jumpCount;
         [SerializeField] private float swordReturnImpact;
 
-        [SerializeField] private Dash dash;
-
         [Header("Attack")]
         [SerializeField] private float counterCooldown;
         private float counterTimer;
 
-        public SkillManager skill { get; private set; }
-        public GameObject sword;
-
         #endregion
 
-        #region States
+        #region Skill
+        public DashSkill dashSkill { get; private set; }
+        public CloneSkill cloneSkill { get; private set; }
+        public SwordSkill swordSkill { get; private set; }
+        public BlackHoleSkill blackHoleSkill { get; private set; }
+        public GameObject swordObj { get; private set; }
+
         #endregion
 
         protected override void Awake()
         {
+            GameObject skillManagerObject = GameObject.Find("SkillManager");
+
+            dashSkill = skillManagerObject.GetComponent<DashSkill>();
+            cloneSkill = skillManagerObject.GetComponent<CloneSkill>();
+            swordSkill = skillManagerObject.GetComponent<SwordSkill>();
+            blackHoleSkill = skillManagerObject.GetComponent<BlackHoleSkill>();
+
             base.Awake();
         }
 
@@ -37,7 +44,24 @@ namespace Assets.Scripts.Characters.Player
         {
             base.Start();
 
-            skill = SkillManager.instance;
+            swordSkill.OnAssignSword += AssignNewSword;
+
+            swordSkill.OnCatchSword += CatchSword;
+            blackHoleSkill.OnExitBlackHoleAbility += ExitBlackHoleAbility;
+        }
+
+        private void OnDestroy()
+        {
+            if (swordSkill != null)
+            {
+                swordSkill.OnAssignSword -= AssignNewSword;
+                swordSkill.OnCatchSword -= CatchSword;
+            }
+
+            if (blackHoleSkill != null)
+            {
+                blackHoleSkill.OnExitBlackHoleAbility -= ExitBlackHoleAbility;
+            }
         }
 
         protected override void Update()
@@ -52,13 +76,14 @@ namespace Assets.Scripts.Characters.Player
             states.Add(EState.Move, new MoveState(this, stateMachine, EState.Move));
             states.Add(EState.Jump, new JumpState(this, stateMachine, EState.Air));
             states.Add(EState.Fall, new FallState(this, stateMachine, EState.Air));
-            states.Add(EState.Dash, new PlayerDashState(this, stateMachine, EState.Dash, dash.DashSpeed, dash.DashDuration));
+            states.Add(EState.Dash, new PlayerDashState(this, stateMachine, EState.Dash, dashSkill.DashSpeed, dashSkill.DashDuration));
             states.Add(EState.WallSlide, new PlayerWallSlideState(this, stateMachine, EState.WallSlide));
             states.Add(EState.WallJump, new WallJumpState(this, stateMachine, EState.Air));
             states.Add(EState.Attack, new PrimaryAttackState(this, stateMachine, EState.Attack, ComboWindow));
             states.Add(EState.CounterAttack, new PlayerCounterAttackState(this, stateMachine, EState.CounterAttack));
             states.Add(EPlayerState.AimSword, new PlayerAimSwordState(this, stateMachine, EPlayerState.AimSword));
             states.Add(EPlayerState.CatchSword, new PlayerCatchSwordState(this, stateMachine, EPlayerState.CatchSword));
+            states.Add(EPlayerState.BlackHole, new PlayerBlackHoleState(this, stateMachine, EState.Air));
         }
 
         protected override void StateController()
@@ -66,7 +91,11 @@ namespace Assets.Scripts.Characters.Player
             XInput = Input.GetAxisRaw("Horizontal");
             YInput = Input.GetAxisRaw("Vertical");
 
-            if (Input.GetKeyDown(KeyCode.Tab) && HasNoSword())
+            if (Input.GetKeyDown(KeyCode.R) && blackHoleSkill.CanUseSkill())
+            {
+                stateMachine.ChangeState(states[EPlayerState.BlackHole]);
+            }
+            else if (Input.GetKeyDown(KeyCode.Tab) && HasNoSword())
             {
                 stateMachine.ChangeState(states[EPlayerState.AimSword]);
             }
@@ -84,8 +113,9 @@ namespace Assets.Scripts.Characters.Player
                 JumpCount++;
                 YInput = 1;
             }
-            else if (Input.GetKeyDown(KeyCode.LeftControl) && SkillManager.instance.dash.CanUseSkill())
+            else if (Input.GetKeyDown(KeyCode.LeftControl) && dashSkill.CanUseSkill())
             {
+                dashSkill.UseSkill();
                 stateMachine.ChangeState(states[EState.Dash]);
             }
         }
@@ -99,24 +129,30 @@ namespace Assets.Scripts.Characters.Player
 
         public void AssignNewSword(GameObject _newSword)
         {
-            sword = _newSword;
+            swordObj = _newSword;
         }
 
         public void CatchSword()
         {
             stateMachine.ChangeState(states[EPlayerState.CatchSword]);
-            Destroy(sword);
+            Destroy(swordObj);
         }
 
         private bool HasNoSword()
         {
-            if (!sword)
+            if (!swordObj)
             {
                 return true;
             }
 
-            sword.GetComponent<SwordSkillController>().ReturnSword();
+            swordObj.GetComponent<SwordSkillController>().ReturnSword();
             return false;
+        }
+
+        private void ExitBlackHoleAbility()
+        {
+            ((SkillState)states[EPlayerState.BlackHole]).IsCasting = false;
+            stateMachine.ChangeState(states[EState.Fall]);
         }
     }
 }

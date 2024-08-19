@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Base
@@ -46,6 +47,19 @@ namespace Assets.Scripts.Base
             characterBase.animator.SetBool(AnimBoolName.ToString(), false);
             characterBase.animator.SetBool(_animBoolName.ToString(), true);
             AnimBoolName = _animBoolName;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is BaseState state &&
+                   EqualityComparer<Character>.Default.Equals(characterBase, state.characterBase) &&
+                   EqualityComparer<Enum>.Default.Equals(animBoolName, state.animBoolName) &&
+                   stateTimer == state.stateTimer;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(characterBase, animBoolName, stateTimer);
         }
     }
 }
