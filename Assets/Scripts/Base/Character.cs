@@ -44,6 +44,8 @@ public abstract class Character : MonoBehaviour
     protected Dictionary<Enum, BaseState> states;
     protected bool isBusy;
 
+    protected Color defaultColor;
+
     #endregion
 
     #region Collision
@@ -71,6 +73,7 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Start()
     {
+        defaultColor = sr.color;
         stateMachine.Initialize(states[EState.Idle]);
     }
 
@@ -156,7 +159,7 @@ public abstract class Character : MonoBehaviour
         {
             sr.color = Color.clear;
         }
-        else sr.color = Color.white;
+        else sr.color = defaultColor;
     }
 
     protected abstract void StateController();
