@@ -24,6 +24,7 @@ namespace Assets.Scripts.Characters.Player
         public CloneSkill cloneSkill { get; private set; }
         public SwordSkill swordSkill { get; private set; }
         public BlackHoleSkill blackHoleSkill { get; private set; }
+        public CrystalSkill crystalSkill { get; private set; }
         public GameObject swordObj { get; private set; }
 
         #endregion
@@ -36,6 +37,7 @@ namespace Assets.Scripts.Characters.Player
             cloneSkill = skillManagerObject.GetComponent<CloneSkill>();
             swordSkill = skillManagerObject.GetComponent<SwordSkill>();
             blackHoleSkill = skillManagerObject.GetComponent<BlackHoleSkill>();
+            crystalSkill = skillManagerObject.GetComponent<CrystalSkill>();
 
             base.Awake();
         }
@@ -94,6 +96,10 @@ namespace Assets.Scripts.Characters.Player
             if (Input.GetKeyDown(KeyCode.R) && blackHoleSkill.CanUseSkill())
             {
                 stateMachine.ChangeState(states[EPlayerState.BlackHole]);
+            }
+            else if (Input.GetKeyDown(KeyCode.F) && crystalSkill.CanUseSkill())
+            {
+                crystalSkill.UseSkill();
             }
             else if (Input.GetKeyDown(KeyCode.Tab) && HasNoSword())
             {

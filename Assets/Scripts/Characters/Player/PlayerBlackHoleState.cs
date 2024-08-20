@@ -43,7 +43,7 @@ namespace Assets.Scripts.Characters.Player
             }
             else
             {
-                character.SetVelocity(0, -.3f);
+                character.SetVelocity(0, -.2f);
 
                 if (!character.blackHoleSkill.IsActive() && character.blackHoleSkill.CanUseSkill())
                 {
