@@ -50,6 +50,9 @@ TagManager:
   - name: Ground
     uniqueID: 1092830743
     locked: 0
+  - name: Chain
+    uniqueID: 2608069399
+    locked: 0
   - name: Decor
     uniqueID: 2858113003
     locked: 0
@@ -61,7 +64,4 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4112892415
-    locked: 0
-  - name: Chain
-    uniqueID: 2608069399
     locked: 0

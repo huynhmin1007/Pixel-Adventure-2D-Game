@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Base.State;
 using Assets.Scripts.Characters.Enemy;
+using Assets.Scripts.Characters.Skeleton;
 using Assets.Scripts.Common;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,32 @@ namespace Assets.Scripts.Characters.HeroTracker
 {
     public class HeroTrackerCharacter : EnemyCharacter
     {
+        protected override void InitializeStates()
+        {
+            states.Add(EState.Idle, new EnemyIdleState(this, stateMachine, EState.Idle));
+            states.Add(EState.Move, new EnemyMoveState(this, stateMachine, EState.Move));
+            states.Add(EState.Fall, new FallState(this, stateMachine, EState.Air));
+            states.Add(EState.Battle, new HeroTrackerBattleState(this, stateMachine, EState.Move));
+            states.Add(EState.Attack, new EnemyAttackState(this, stateMachine, EState.Attack, comboWindow));
+            states.Add(EState.Stunned, new EnemyStunnedState(this, stateMachine, EState.Stunned));
+        }
+
+        protected override void StateController()
+        {
+            Debug.Log(stateMachine.CurrentState.AnimBoolName);
+        }
+
+        public override void Stun()
+        {
+            base.Stun();
+            stateMachine.ChangeState(states[EState.Stunned]);
+        }
+
         public override bool CanBattle()
         {
             /**
-            * Kiểm tra có phát hiện Player không (tia thẳng màu vàng)
-            */
+             * Kiểm tra có phát hiện Player không (tia thẳng màu vàng)
+             */
             bool isPlayerDetected = IsPlayerDetected();
 
             if (isPlayerDetected)
@@ -64,23 +86,6 @@ namespace Assets.Scripts.Characters.HeroTracker
              * Trả về giá trị có phát hiện player không để quyết định nên theo đuổi tiếp hay không
              */
             return isPlayerDetected;
-        }
-
-
-        protected override void InitializeStates()
-        {
-            states.Add(EState.Idle, new EnemyIdleState(this, stateMachine, EState.Idle));
-            states.Add(EState.Move, new EnemyMoveState(this, stateMachine, EState.Move));
-            states.Add(EState.Fall, new FallState(this, stateMachine, EState.Air));
-            states.Add(EState.Battle, new HeroTrackerBattleState(this, stateMachine, EState.Move));
-            states.Add(EState.Jump, new JumpState(this, stateMachine, EState.Air));
-            states.Add(EState.Attack, new EnemyAttackState(this, stateMachine, EState.Attack, comboWindow));
-        }
-
-        protected override void StateController()
-        {
-            
-
         }
     }
 }
