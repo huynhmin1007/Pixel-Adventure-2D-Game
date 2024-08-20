@@ -75,7 +75,7 @@ public class BlackHoleSkillController : MonoBehaviour
         GameObject newClone = Instantiate(clonePrefab);
 
         newClone.GetComponent<CloneSkillController>().SetupClone(
-            targets[randomIndex].transform, 1.5f, true, new Vector3(xOffset, 0));
+            targets[randomIndex].transform, 1.5f, true, new Vector3(xOffset, 0), targets[randomIndex].transform);
 
         if (cloneAttackTimer <= 0)
         {

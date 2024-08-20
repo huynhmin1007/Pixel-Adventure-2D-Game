@@ -53,7 +53,11 @@ namespace Assets.Scripts.Characters.Skills
             SetupGravity();
         }
 
-        public void TriggleCatchSword() => OnCatchSword?.Invoke();
+        public override void TriggerExitSkill()
+        {
+            base.TriggerExitSkill();
+            OnCatchSword?.Invoke();
+        }
 
         private void SetupGravity()
         {
