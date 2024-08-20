@@ -79,7 +79,7 @@ namespace Assets.Scripts.Characters.Skills
 
                 if (Vector2.Distance(transform.position, character.transform.position) < 1)
                 {
-                    swordSkill.TriggleCatchSword();
+                    swordSkill.TriggerExitSkill();
                 }
             }
 

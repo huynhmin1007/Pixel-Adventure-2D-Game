@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Characters.Enemy;
+using UnityEngine;
 
 namespace Assets.Scripts.Characters.Skills
 {
@@ -24,7 +25,7 @@ namespace Assets.Scripts.Characters.Skills
 
         protected virtual void Update()
         {
-            if (cooldownTimer >= 0)
+            if (cooldownTimer >= 0 && !IsActive())
             {
                 cooldownTimer -= Time.deltaTime;
                 if (cooldownTimer < 0)
@@ -36,7 +37,7 @@ namespace Assets.Scripts.Characters.Skills
 
         public virtual bool CanUseSkill()
         {
-            return state == AbilityState.Ready;
+            return state == AbilityState.Ready && cooldownTimer <= 0;
         }
 
         public virtual void UseSkill()
@@ -51,6 +52,32 @@ namespace Assets.Scripts.Characters.Skills
         {
             state = AbilityState.Cooldown;
             cooldownTimer = cooldown;
+        }
+
+        protected virtual Transform FindClosestEnemy(Transform _checkTransform, float radius = 25f)
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(_checkTransform.position, radius);
+
+            float closestDistance = Mathf.Infinity;
+            Transform closestEnemy = null;
+
+            foreach (Collider2D hit in colliders)
+            {
+                EnemyCharacter enemy = hit.GetComponent<EnemyCharacter>();
+
+                if (enemy != null)
+                {
+                    float distanceToEnemy = Vector2.Distance(_checkTransform.position, hit.transform.position);
+
+                    if (distanceToEnemy < closestDistance)
+                    {
+                        closestDistance = distanceToEnemy;
+                        closestEnemy = hit.transform;
+                    }
+                }
+            }
+
+            return closestEnemy;
         }
     }
 }
