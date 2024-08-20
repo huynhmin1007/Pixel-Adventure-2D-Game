@@ -1315,10 +1315,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 777114265395573633, guid: 8c6b701a5d9b6bc49910dad97862b159, type: 3}
-      propertyPath: playerLayer.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
     - target: {fileID: 4927908341019562502, guid: 8c6b701a5d9b6bc49910dad97862b159, type: 3}
       propertyPath: m_Name
       value: AgressiveZombi
@@ -1935,7 +1931,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1787262705
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -85727878, guid: 687df074731fbf744b668d2275dbb675, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8896,12 +8892,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908926562}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.19021527, y: -0.91336125, z: -0.016594468}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.369785, y: -0.25336123, z: -0.016594468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1192330228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004335632 stripped
 GameObject:
@@ -8986,7 +8982,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3023769981088667882, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3845632803887646433, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       propertyPath: maxSize
@@ -9018,11 +9014,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618687455090447724, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5523286971034996607, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5917480555176010677, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9066,19 +9062,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6557969279947703036, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7168824859008801911, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7234417613395183591, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5917480555176010677, guid: 79d80f234f099124ea429faf25580fda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1908926564}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7234417613395183591, guid: 79d80f234f099124ea429faf25580fda, type: 3}
       insertIndex: -1
@@ -9093,5 +9092,4 @@ SceneRoots:
   - {fileID: 268829385}
   - {fileID: 1806276738}
   - {fileID: 1382910291}
-  - {fileID: 1908926564}
   - {fileID: 840387543}
