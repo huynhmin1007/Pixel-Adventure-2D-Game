@@ -30,6 +30,7 @@ namespace Assets.Scripts.Characters.AgressiveZombi
 
         public override bool CanBattle()
         {
+
             /**
              * Kiểm tra có phát hiện Player không (tia thẳng màu vàng)
              */
@@ -37,6 +38,8 @@ namespace Assets.Scripts.Characters.AgressiveZombi
 
             if (isPlayerDetected)
             {
+
+
                 /**
                  * Nếu player trong phạm vi tấn công của enemy
                  */
