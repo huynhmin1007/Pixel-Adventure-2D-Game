@@ -11,24 +11,26 @@ namespace Assets.Scripts.Characters.CollisionStrategy
         [SerializeField] private Direction direction;
 
         public Direction Direction { get => direction; set => direction = value; }
+        public Transform Checker { get => checker; set => checker = value; }
+        public float Distance { get => distance; set => distance = value; }
 
         public RaycastHit2D Check(LayerMask layerCheck)
         {
-            return Physics2D.Raycast(checker.position, direction.ToVector2(), distance, layerCheck);
+            return Physics2D.Raycast(Checker.position, direction.ToVector2(), Distance, layerCheck);
         }
 
         public void Draw(Color color = default)
         {
-            if (checker == null)
+            if (Checker == null)
                 return;
 
             color = color == default ? Color.cyan : color;
 
             Gizmos.color = color;
             Vector2 directionVector = direction.ToVector2();
-            Vector3 endPoint = checker.position + (Vector3)directionVector * distance;
+            Vector3 endPoint = Checker.position + (Vector3)directionVector * Distance;
 
-            Gizmos.DrawLine(checker.position, endPoint);
+            Gizmos.DrawLine(Checker.position, endPoint);
         }
     }
 }

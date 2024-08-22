@@ -208,8 +208,8 @@ public abstract class Character : MonoBehaviour
     public Vector2[] AttackMove { get => attackMove; set => attackMove = value; }
     public bool IsImmune { get => isImmune; set => isImmune = value; }
 
-    public RaycastHit2D IsGrounded() => groundCheck.Check(groundLayer);
-    public RaycastHit2D IsWallDetected() => wallCheck.Check(groundLayer);
+    public virtual RaycastHit2D IsGrounded() => groundCheck.Check(groundLayer);
+    public virtual RaycastHit2D IsWallDetected() => wallCheck.Check(groundLayer);
     public Collider2D Hitbox { get => hitboxAttack; set => hitboxAttack = value; }
     public float FreezeTime { get => freezeTime; set => freezeTime = value; }
     public Rigidbody2D Rb { get => rb; set => rb = value; }

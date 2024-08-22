@@ -1,6 +1,9 @@
 ﻿using Assets.Scripts.Base.State;
 using Assets.Scripts.Characters.Skills;
 using Assets.Scripts.Common;
+using System;
+using Unity.VisualScripting;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 namespace Assets.Scripts.Characters.Player
@@ -28,6 +31,9 @@ namespace Assets.Scripts.Characters.Player
         public GameObject swordObj { get; private set; }
 
         #endregion
+
+        public OneWayPlatForm platForm;
+        public LayerMask platFormLayer;
 
         protected override void Awake()
         {
@@ -76,7 +82,7 @@ namespace Assets.Scripts.Characters.Player
         {
             states.Add(EState.Idle, new PlayerIdleState(this, stateMachine, EState.Idle));
             states.Add(EState.Move, new MoveState(this, stateMachine, EState.Move));
-            states.Add(EState.Jump, new JumpState(this, stateMachine, EState.Air));
+            states.Add(EState.Jump, new PlayerJumpState(this, stateMachine, EState.Air));
             states.Add(EState.Fall, new FallState(this, stateMachine, EState.Air));
             states.Add(EState.Dash, new PlayerDashState(this, stateMachine, EState.Dash, dashSkill.DashSpeed, dashSkill.DashDuration));
             states.Add(EState.WallSlide, new PlayerWallSlideState(this, stateMachine, EState.WallSlide));
@@ -115,10 +121,22 @@ namespace Assets.Scripts.Characters.Player
             {
                 stateMachine.ChangeState(states[EState.Attack], true);
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && JumpCount < MaxJumpCount)
+            else if (Input.GetKeyDown(KeyCode.Space))
             {
-                JumpCount++;
-                YInput = 1;
+                Debug.Log(platForm);
+                if (platForm != null && Input.GetKey(KeyCode.S))
+                {
+                    Debug.Log("platForm is not null");
+                    platForm.effector.rotationalOffset = 180f;
+                    return;
+                }
+
+                if (JumpCount < MaxJumpCount)
+                {
+                    JumpCount++;
+                    YInput = 1;
+                  
+                }
             }
             else if (Input.GetKeyDown(KeyCode.LeftControl) && dashSkill.CanUseSkill())
             {
@@ -161,12 +179,31 @@ namespace Assets.Scripts.Characters.Player
             ((SkillState)states[EPlayerState.BlackHole]).IsCasting = false;
             stateMachine.ChangeState(states[EState.Fall]);
         }
-
         public override void Dead()
         {
             base.Dead();
 
             stateMachine.ChangeState(states[EState.Dead]);
+        }
+        public bool IsState(Enum state)
+        {
+            return stateMachine.IsAnimation(state);
+        }
+
+        public string AnimBoolName()
+        {
+            return stateMachine.CurrentState.AnimBoolName.ToString();
+        }
+
+        public override RaycastHit2D IsGrounded()
+        {
+            RaycastHit2D check = base.IsGrounded();
+            if (!check)
+            {
+                return Physics2D.Raycast(groundCheck.Checker.position,
+                groundCheck.Direction.ToVector2(), groundCheck.Distance, platFormLayer);
+            }
+            return check;
         }
     }
 }
