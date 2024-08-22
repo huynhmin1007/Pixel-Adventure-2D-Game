@@ -8,6 +8,6 @@ namespace Assets.Scripts.Common
 {
     public enum EObservatoryBossState
     {
-        IdleBall, FireBall
+        IdleBall, FireBall, IdleLaserLoad, Laser, LaserJumpLoad
     }
 }

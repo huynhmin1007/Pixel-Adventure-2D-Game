@@ -20,6 +20,8 @@ namespace Assets.Scripts.Characters.ObservatoryBoss.Skills
         [SerializeField] private float moveSpeed;
 
         [SerializeField]  private float ballTimeCooldown;
+        //[SerializeField] private Animator lineBallEffect;
+        //[SerializeField] private Animator explodeBallEffect;    
 
         public override void UseSkill()
         {
