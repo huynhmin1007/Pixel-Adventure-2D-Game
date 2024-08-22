@@ -57,6 +57,7 @@ public abstract class Character : MonoBehaviour
 
     protected bool isImmune;
     public CharacterStats stats { get; private set; }
+    public System.Action onFlipped;
 
     protected virtual void Awake()
     {
@@ -85,6 +86,16 @@ public abstract class Character : MonoBehaviour
         stateMachine.Update();
     }
 
+    public virtual void SlowEntityBy(float _slowPercentage, float _slowDuration)
+    {
+
+    }
+    protected virtual void ReturnDefaultSpeed()
+    {
+        animator.speed = 1;
+    }
+
+
     public IEnumerator BusyFor(float seconds)
     {
         IsBusy = true;
@@ -107,6 +118,11 @@ public abstract class Character : MonoBehaviour
         Direction = Direction.Flip();
         wallCheck.Direction = Direction;
         transform.Rotate(0, 180, 0);
+
+        if (onFlipped != null)
+        {
+            onFlipped();
+        }
     }
 
     public void SetVelocity(float x, float y, bool flip = false)
@@ -139,6 +155,7 @@ public abstract class Character : MonoBehaviour
         flashFX.StartCoroutine("FlashFX");
         StartCoroutine("HitKnockback");
     }
+
 
     protected virtual IEnumerator HitKnockback()
     {
@@ -174,6 +191,7 @@ public abstract class Character : MonoBehaviour
     {
         return Mathf.Abs(value) < threshold;
     }
+
 
     public virtual void FrozenTime(bool _timeFrozen)
     {

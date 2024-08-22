@@ -32,7 +32,9 @@ namespace Assets.Scripts.Characters.Player
 
         public OneWayPlatForm platForm;
         public LayerMask platFormLayer;
-
+        private float defaultDashSpeed;
+        private float defaultMoveSpeed;
+        private float defaultJumpForce;
         protected override void Awake()
         {
             GameObject skillManagerObject = GameObject.Find("SkillManager");
@@ -42,7 +44,6 @@ namespace Assets.Scripts.Characters.Player
             swordSkill = skillManagerObject.GetComponent<SwordSkill>();
             blackHoleSkill = skillManagerObject.GetComponent<BlackHoleSkill>();
             crystalSkill = skillManagerObject.GetComponent<CrystalSkill>();
-
             base.Awake();
         }
 
@@ -54,6 +55,10 @@ namespace Assets.Scripts.Characters.Player
 
             swordSkill.OnCatchSword += CatchSword;
             blackHoleSkill.OnExitBlackHoleAbility += ExitBlackHoleAbility;
+
+            defaultMoveSpeed = moveSpeed;
+            defaultJumpForce = jumpForce;
+            defaultDashSpeed = dashSkill.DashSpeed;
         }
 
         private void OnDestroy()
@@ -75,6 +80,26 @@ namespace Assets.Scripts.Characters.Player
             counterTimer -= Time.deltaTime;
             base.Update();
         }
+
+        public override void SlowEntityBy(float _slowPercentage, float _slowDuration)
+        {
+            moveSpeed = moveSpeed * (1 - _slowPercentage);
+            jumpForce = jumpForce * (1 - _slowPercentage);
+            dashSkill.DashSpeed = dashSkill.DashSpeed * (1 - _slowPercentage);
+            animator.speed = animator.speed * (1 - _slowPercentage);
+
+            Invoke("ReturnDefaultSpeed", _slowDuration);
+        }
+
+        protected override void ReturnDefaultSpeed()
+        {
+            base.ReturnDefaultSpeed();
+
+            moveSpeed = defaultMoveSpeed;
+            jumpForce = defaultJumpForce;
+            dashSkill.DashSpeed = defaultDashSpeed;
+        }
+
 
         protected override void InitializeStates()
         {

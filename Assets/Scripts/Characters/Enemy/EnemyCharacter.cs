@@ -26,7 +26,7 @@ namespace Assets.Scripts.Characters.Enemy
 
         [HideInInspector] public Collider2D cd { get; private set; }
 
-        public System.Action onFlipped;
+
         public float IdleTime { get => idleTime; set => idleTime = value; }
         protected override void Start()
         {
@@ -46,6 +46,23 @@ namespace Assets.Scripts.Characters.Enemy
         public virtual void OpenCounterAttackWindow()
         {
             CanBeStunned = true;
+        }
+
+        public override void SlowEntityBy(float _slowPercentage, float _slowDuration)
+        {
+
+            Debug.Log(moveSpeed);
+            moveSpeed = moveSpeed * (1 - _slowPercentage);
+            animator.speed = animator.speed * (1 - _slowPercentage);
+
+            Invoke("ReturnDefaultSpeed", _slowDuration);
+        }
+
+        protected override void ReturnDefaultSpeed()
+        {
+            base.ReturnDefaultSpeed();
+
+            moveSpeed = defaultMoveSpeed;
         }
 
         public virtual void CloseCounterAttackWindow()
@@ -82,8 +99,7 @@ namespace Assets.Scripts.Characters.Enemy
         public override void Flip()
         {
             base.Flip();
-
-            onFlipped();
+           
         }
 
         public abstract bool CanBattle();
@@ -106,6 +122,8 @@ namespace Assets.Scripts.Characters.Enemy
             => Physics2D.OverlapBox(Hitbox.bounds.center, Hitbox.bounds.size, 0, playerLayer);
 
         public virtual void AssignLastAnimBoolName(string _animBoolName) => lastAnimBoolName = _animBoolName;
+
+     
 
         public override void Dead()
         {
