@@ -54,6 +54,12 @@ namespace Assets.Scripts.Characters.Player
 
             foreach (var hitCollider in hitColliders)
             {
+                if (hitCollider.GetComponent<Arrow_Controller>() != null)
+                {
+                    hitCollider.GetComponent<Arrow_Controller>().FlipArrow();
+                    continue;
+                }
+
                 EnemyCharacter enemy = hitCollider.GetComponentInParent<EnemyCharacter>();
 
                 if (enemy != null && enemy.CanBeStunned && !stunnedEnemies.Contains(enemy))

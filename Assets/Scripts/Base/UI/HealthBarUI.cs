@@ -15,6 +15,7 @@ public class HealthBarUI : MonoBehaviour
     {
         myTransform = GetComponent<RectTransform>();
         character = GetComponentInParent<Character>();
+
         slider = GetComponentInChildren<Slider>();
         myStats = GetComponentInParent<CharacterStats>();
         character.onFlipped += FlipUI;

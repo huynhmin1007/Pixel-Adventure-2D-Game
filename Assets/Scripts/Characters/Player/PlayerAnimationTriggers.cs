@@ -15,7 +15,6 @@ namespace Assets.Scripts.Base
         {
             if (hitbox != null)
             {
-                hitbox.enabled = true;
                 Collider2D[] hitColliders = new Collider2D[10];
                 int hitCount = Physics2D.OverlapCollider(hitbox, new ContactFilter2D(), hitColliders);
 
@@ -32,7 +31,6 @@ namespace Assets.Scripts.Base
                         }
                     }
                 }
-                hitbox.enabled = false;
             }
         }
 

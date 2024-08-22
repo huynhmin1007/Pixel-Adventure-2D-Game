@@ -1,8 +1,14 @@
-﻿using Assets.Scripts.Common;
+﻿using Assets.Scripts.Base.UI;
+using Assets.Scripts.Common;
 using UnityEngine;
 
 namespace Assets.Scripts.Characters.Enemy
 {
+    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(CapsuleCollider2D))]
+    [RequireComponent(typeof(EnemyStats))]
+    [RequireComponent(typeof(CharacterFlashFX))]
+    //[RequireComponent(typeof(ItemDrop))]
     public abstract class EnemyCharacter : Character
     {
         [Header("Attack")]
@@ -24,14 +30,13 @@ namespace Assets.Scripts.Characters.Enemy
         [SerializeField] protected GameObject warningImage;
         protected string lastAnimBoolName;
 
-        [HideInInspector] public Collider2D cd { get; private set; }
-
+        [HideInInspector] public CapsuleCollider2D cd { get; private set; }
 
         public float IdleTime { get => idleTime; set => idleTime = value; }
         protected override void Start()
         {
             base.Start();
-            cd = GetComponent<Collider2D>();
+            cd = GetComponent<CapsuleCollider2D>();
         }
 
         protected override void OnDrawGizmos()
@@ -99,10 +104,14 @@ namespace Assets.Scripts.Characters.Enemy
         public override void Flip()
         {
             base.Flip();
-           
         }
 
         public abstract bool CanBattle();
+
+        public virtual void AnimationSpecialAttackTrigger()
+        {
+
+        }
 
         public float PlayerCheckDistance { get => playerCheckDistance; set => playerCheckDistance = value; }
         public float LastTimeAttacked { get => lastTimeAttacked; set => lastTimeAttacked = value; }
@@ -130,6 +139,11 @@ namespace Assets.Scripts.Characters.Enemy
             base.Dead();
 
             stateMachine.ChangeState(states[EState.Dead]);
+        }
+
+        public void DestroyEnemy()
+        {
+            Destroy(gameObject);
         }
     }
 }

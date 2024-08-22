@@ -1,20 +1,21 @@
 ﻿using Assets.Scripts.Base;
+using Assets.Scripts.Characters.Enemy;
 using Assets.Scripts.Characters.Player;
 using Assets.Scripts.Common;
 using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Characters.Enemy
+namespace Assets.Scripts.Characters.Acher
 {
-    public class EnemyBattleState : BaseState
+    public class AcherBattleState : EnemyBattleState
     {
+        private AcherCharacter acher;
         private PlayerCharacter player;
-        private EnemyCharacter acher;
         private float moveDir;
 
-        public EnemyBattleState(EnemyCharacter characterBase, StateMachine stateMachine, Enum animBoolName) : base(characterBase, stateMachine, animBoolName)
+        public AcherBattleState(EnemyCharacter characterBase, StateMachine stateMachine, Enum animBoolName) : base(characterBase, stateMachine, animBoolName)
         {
-            this.acher = characterBase;
+            acher = (AcherCharacter)characterBase;
         }
 
         public override void Enter()
@@ -40,6 +41,15 @@ namespace Assets.Scripts.Characters.Enemy
         {
             base.Update();
 
+            if (acher.IsPlayerDetected() && acher.IsPlayerDetected().distance < acher.safeDistance)
+            {
+                if (CanJump())
+                {
+                    stateMachine.ChangeState(acher.GetState(EState.Jump));
+                    return;
+                }
+            }
+
             if (player.XVelocity == 0 && Vector2.Distance(acher.Hitbox.bounds.min, player.transform.position) <= 1)
             {
                 if (player.transform.position.x > acher.Hitbox.bounds.min.x)
@@ -53,19 +63,11 @@ namespace Assets.Scripts.Characters.Enemy
                 return;
             }
 
-            /**
-             * Nếu enemy có thể batttle (tự cài đặt logic riêng với mỗi enemy)
-             * Cài lại thời gian theo đuổi 
-             */
             if (acher.CanBattle())
             {
                 stateTimer = acher.BattleTime;
                 return;
             }
-            /**
-             * Nếu đuổi theo quá lâu hoặc player đi quá xa
-             * -> Ngừng theo đuổi
-             */
             else if (stateTimer < 0
                 || Vector2.Distance(player.transform.position, acher.transform.position) > acher.MaxFollowDistance)
             {
@@ -73,17 +75,10 @@ namespace Assets.Scripts.Characters.Enemy
                 return;
             }
 
-            /**
-             * Nếu player phía sau enemy thì đi về sau lưng và ngược lại
-             */
             if (player.transform.position.x > acher.transform.position.x)
                 moveDir = 1;
             else if (player.transform.position.x < acher.transform.position.x)
                 moveDir = -1;
-
-            /**
-             * Đổi sang Animation Move và di chuyển về phía player
-             */
 
             if (acher.IsWallDetected())
             {
@@ -92,6 +87,16 @@ namespace Assets.Scripts.Characters.Enemy
             else
                 stateMachine.ChangeAnimation(EState.Move);
             acher.SetVelocity(acher.MoveSpeed * moveDir, acher.YVelocity, true);
+        }
+
+        private bool CanJump()
+        {
+            if (Time.time >= acher.lastTimeJumped + acher.jumpCooldown)
+            {
+                acher.lastTimeJumped = Time.time;
+                return true;
+            }
+            return false;
         }
     }
 }

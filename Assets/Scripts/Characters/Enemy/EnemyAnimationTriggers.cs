@@ -42,5 +42,7 @@ namespace Assets.Scripts.Base
         private void OpenCounterWindow() => enemy.OpenCounterAttackWindow();
         private void CloseCounterWindow() => enemy.CloseCounterAttackWindow();
         private void OpenWarningWindow() => enemy.OpenWarningAttackWindow();
+
+        private void SpecialAttackTrigger() => enemy.AnimationSpecialAttackTrigger();
     }
 }
