@@ -39,7 +39,7 @@ namespace Assets.Scripts.Characters.Enemy
         public override void Update()
         {
             base.Update();
-
+            
             if (player.XVelocity == 0 && Vector2.Distance(character.Hitbox.bounds.min, player.transform.position) <= 1)
             {
                 if (player.transform.position.x > character.Hitbox.bounds.min.x)

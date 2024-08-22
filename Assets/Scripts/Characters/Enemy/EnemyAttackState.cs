@@ -34,7 +34,8 @@ namespace Assets.Scripts.Characters.Enemy
 
             characterBase.animator.SetInteger("ComboCounter", comboCounter);
 
-            if (player.position.x < character.Direction.XValue())
+            if ((player.position.x < character.transform.position.x && character.Direction == Direction.RIGHT)
+                || (player.position.x > character.transform.position.x && character.Direction == Direction.LEFT))
             {
                 character.Flip();
             }
@@ -43,7 +44,7 @@ namespace Assets.Scripts.Characters.Enemy
             {
                 float xVelocity = !characterBase.IsGrounded() ? characterBase.MoveSpeed * .2f : 1;
                 characterBase.SetVelocity(
-                characterBase.AttackMove[comboCounter].x * xVelocity, characterBase.AttackMove[comboCounter].y);
+                characterBase.AttackMove[comboCounter].x * xVelocity * character.Direction.XValue(), characterBase.AttackMove[comboCounter].y);
             }
             else
             {
