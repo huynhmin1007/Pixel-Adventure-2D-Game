@@ -1,15 +1,14 @@
-using Assets.Scripts.Characters.Enemy;
 using UnityEngine;
 
 public class HealthBarUI : MonoBehaviour
 {
-    private EnemyCharacter character;
+    private Character character;
     private RectTransform myTransform;
 
     private void Start()
     {
         myTransform = GetComponent<RectTransform>();
-        character = GetComponentInParent<EnemyCharacter>();
+        character = GetComponentInParent<Character>();
 
         character.onFlipped += FlipUI;
     }

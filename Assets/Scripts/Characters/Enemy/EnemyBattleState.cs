@@ -9,12 +9,12 @@ namespace Assets.Scripts.Characters.Enemy
     public class EnemyBattleState : BaseState
     {
         private PlayerCharacter player;
-        private EnemyCharacter character;
+        private EnemyCharacter acher;
         private float moveDir;
 
         public EnemyBattleState(EnemyCharacter characterBase, StateMachine stateMachine, Enum animBoolName) : base(characterBase, stateMachine, animBoolName)
         {
-            this.character = characterBase;
+            this.acher = characterBase;
         }
 
         public override void Enter()
@@ -26,8 +26,8 @@ namespace Assets.Scripts.Characters.Enemy
              * stateTimer (thời gian tối đa enemy đuổi theo player (tránh di chuyển vào gốc tường xong bị kẹt))
              */
             player = PlayerManager.instance.player;
-            character.ResetVelocity();
-            stateTimer = character.BattleTime;
+            acher.ResetVelocity();
+            stateTimer = acher.BattleTime;
         }
 
         public override void Exit()
@@ -39,16 +39,16 @@ namespace Assets.Scripts.Characters.Enemy
         public override void Update()
         {
             base.Update();
-            
-            if (player.XVelocity == 0 && Vector2.Distance(character.Hitbox.bounds.min, player.transform.position) <= 1)
+
+            if (player.XVelocity == 0 && Vector2.Distance(acher.Hitbox.bounds.min, player.transform.position) <= 1)
             {
-                if (player.transform.position.x > character.Hitbox.bounds.min.x)
+                if (player.transform.position.x > acher.Hitbox.bounds.min.x)
                     moveDir = -1;
-                else if (player.transform.position.x < character.Hitbox.bounds.min.x)
+                else if (player.transform.position.x < acher.Hitbox.bounds.min.x)
                     moveDir = 1;
 
                 stateMachine.ChangeAnimation(EState.Move);
-                character.SetVelocity(character.MoveSpeed * moveDir * 4, 4);
+                acher.SetVelocity(acher.MoveSpeed * moveDir * 4, 4);
 
                 return;
             }
@@ -57,9 +57,9 @@ namespace Assets.Scripts.Characters.Enemy
              * Nếu enemy có thể batttle (tự cài đặt logic riêng với mỗi enemy)
              * Cài lại thời gian theo đuổi 
              */
-            if (character.CanBattle())
+            if (acher.CanBattle())
             {
-                stateTimer = character.BattleTime;
+                stateTimer = acher.BattleTime;
                 return;
             }
             /**
@@ -67,31 +67,31 @@ namespace Assets.Scripts.Characters.Enemy
              * -> Ngừng theo đuổi
              */
             else if (stateTimer < 0
-                || Vector2.Distance(player.transform.position, character.transform.position) > character.MaxFollowDistance)
+                || Vector2.Distance(player.transform.position, acher.transform.position) > acher.MaxFollowDistance)
             {
-                stateMachine.ChangeState(character.GetState(EState.Idle));
+                stateMachine.ChangeState(acher.GetState(EState.Idle));
                 return;
             }
 
             /**
              * Nếu player phía sau enemy thì đi về sau lưng và ngược lại
              */
-            if (player.transform.position.x > character.transform.position.x)
+            if (player.transform.position.x > acher.transform.position.x)
                 moveDir = 1;
-            else if (player.transform.position.x < character.transform.position.x)
+            else if (player.transform.position.x < acher.transform.position.x)
                 moveDir = -1;
 
             /**
              * Đổi sang Animation Move và di chuyển về phía player
              */
 
-            if (character.IsWallDetected())
+            if (acher.IsWallDetected())
             {
                 stateMachine.ChangeAnimation(EState.Idle);
             }
             else
                 stateMachine.ChangeAnimation(EState.Move);
-            character.SetVelocity(character.MoveSpeed * moveDir, character.YVelocity, true);
+            acher.SetVelocity(acher.MoveSpeed * moveDir, acher.YVelocity, true);
         }
     }
 }
