@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1576990213944283324}
   - component: {fileID: 1438069034210870866}
   - component: {fileID: 555896486782488440}
+  - component: {fileID: 8818030417044934399}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -204,7 +205,7 @@ MonoBehaviour:
   knockBackDuration: 0
   groundCheck:
     checker: {fileID: 9079883791574573454}
-    distance: 0.15
+    distance: 0.3
     direction: 3
   wallCheck:
     checker: {fileID: 4974763040300010718}
@@ -230,6 +231,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashDuration: 0.15
   hitMaterial: {fileID: 2100000, guid: 34179c2fc670a154e8d6be69605dd6c8, type: 2}
+--- !u!114 &8818030417044934399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618687455090447724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c82655625c1c8418460187697b01a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength:
+    baseValue: 0
+    modifiers: 
+  agility:
+    baseValue: 0
+    modifiers: 
+  intelgence:
+    baseValue: 0
+    modifiers: 
+  vitality:
+    baseValue: 0
+    modifiers: 
+  damage:
+    baseValue: 10
+    modifiers: 
+  critChance:
+    baseValue: 0
+    modifiers: 
+  critPower:
+    baseValue: 0
+    modifiers: 
+  maxHealth:
+    baseValue: 1000
+    modifiers: 
+  armor:
+    baseValue: 20
+    modifiers: 
+  evasion:
+    baseValue: 70
+    modifiers: 
+  magicResistance:
+    baseValue: 0
+    modifiers: 
+  fireDamage:
+    baseValue: 12
+    modifiers: 
+  iceDamage:
+    baseValue: 0
+    modifiers: 
+  lightningDamage:
+    baseValue: 0
+    modifiers: 
+  isIgnited: 0
+  isChiled: 0
+  isShocked: 0
+  currentHealth: 0
 --- !u!1 &5523286971034996607
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8394801328822736554}
   - component: {fileID: 5001931627704975349}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +443,7 @@ SpriteRenderer:
   m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 190455313, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.83137256, g: 0.83137256, b: 0.83137256, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -527,6 +586,12 @@ MonoBehaviour:
   clonePrefab: {fileID: 5502844656880108681, guid: 189924e64a9626f4ab9affa94e06b349, type: 3}
   cloneDuration: 1.5
   canAttack: 1
+  createCloneOnDashStart: 0
+  createCloneOnDashOver: 0
+  createCloneOnCounterAttack: 0
+  canDuplicateClone: 0
+  chanceToDuplicate: 0
+  crystalInsteadOfClone: 0
 --- !u!114 &8118473444841943742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17cc9be3443a6340b39f386860e9443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 5
   state: 0
   blackHolePrefab: {fileID: 8509497073389539564, guid: 6af840d5bdc01394abf60c3901454841, type: 3}
   clonePrefab: {fileID: 5502844656880108681, guid: 189924e64a9626f4ab9affa94e06b349, type: 3}
@@ -576,7 +641,7 @@ MonoBehaviour:
   growSpeed: 3
   shrinkSpeed: 3
   cloneAttackCooldown: 0.35
-  cloneAttackDuration: 1.5
+  cloneAttackDuration: 2.5
 --- !u!114 &6653451398124629582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,6 +658,7 @@ MonoBehaviour:
   state: 0
   crystalPrefab: {fileID: 3137489103277396213, guid: 5b4a14c59acbe4b439b005d9ed5ae818, type: 3}
   crystalDuration: 1.5
+  cloneInsteadOfCrystal: 0
   canExplode: 1
   canMoveToEnemy: 1
   moveSpeed: 4
