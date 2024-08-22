@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -85727878, guid: 687df074731fbf744b668d2275dbb675, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.83137256, g: 0.83137256, b: 0.83137256, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 64
 --- !u!1 &4999183562982868504
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 2582020973690475877}
   - component: {fileID: 6505323933259756171}
   - component: {fileID: 317436917496211493}
+  - component: {fileID: 3706848118555961563}
   m_Layer: 7
   m_Name: Enemy_Skeleton
   m_TagString: Untagged
@@ -253,7 +254,7 @@ MonoBehaviour:
   attackMove: []
   hitboxAttack: {fileID: 2574948608716415947}
   freezeTime: 0
-  knockbackDirection: {x: 7, y: 12}
+  knockbackDirection: {x: 5, y: 10}
   knockBackDuration: 0.07
   groundCheck:
     checker: {fileID: 7529879054758970405}
@@ -273,7 +274,7 @@ MonoBehaviour:
   maxFollowDistance: 10
   playerLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 64
   idleTime: 1
   stunDuration: 1
   stunDirection: {x: 10, y: 12}
@@ -292,6 +293,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashDuration: 0.1
   hitMaterial: {fileID: 2100000, guid: 34179c2fc670a154e8d6be69605dd6c8, type: 2}
+--- !u!114 &3706848118555961563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4999183562982868504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dacf7133f83b6547b2f0904480894d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength:
+    baseValue: 0
+    modifiers: 
+  agility:
+    baseValue: 0
+    modifiers: 
+  intelgence:
+    baseValue: 0
+    modifiers: 
+  vitality:
+    baseValue: 0
+    modifiers: 
+  damage:
+    baseValue: 10
+    modifiers: 
+  critChance:
+    baseValue: 0
+    modifiers: 
+  critPower:
+    baseValue: 0
+    modifiers: 
+  maxHealth:
+    baseValue: 10
+    modifiers: 
+  armor:
+    baseValue: 0
+    modifiers: 
+  evasion:
+    baseValue: 0
+    modifiers: 
+  fireDamage:
+    baseValue: 0
+    modifiers: 
+  iceDamage:
+    baseValue: 0
+    modifiers: 
+  lightningDamage:
+    baseValue: 0
+    modifiers: 
+  isIgnited: 0
+  isChiled: 0
+  isShocked: 0
+  currentHealth: 0
 --- !u!1 &6405058912777925131
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5794257187155224435}
   - component: {fileID: 2574948608716415947}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

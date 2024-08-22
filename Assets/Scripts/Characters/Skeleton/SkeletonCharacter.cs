@@ -14,6 +14,7 @@ namespace Assets.Scripts.Characters.Skeleton
             states.Add(EState.Battle, new SkeletonBattleState(this, stateMachine, EState.Move));
             states.Add(EState.Attack, new EnemyAttackState(this, stateMachine, EState.Attack, comboWindow));
             states.Add(EState.Stunned, new EnemyStunnedState(this, stateMachine, EState.Stunned));
+            states.Add(EState.Dead, new EnemyDeadState(this, stateMachine, EState.Idle));
         }
 
         protected override void StateController()

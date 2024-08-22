@@ -92,8 +92,8 @@ public class BlackHoleSkillController : MonoBehaviour
 
     private bool IsMaxSize()
     {
-        return Mathf.Abs(maxSize - transform.localScale.x) <= 0.1f
-            && Mathf.Abs(maxSize - transform.localScale.y) <= 0.1f;
+        return Mathf.Abs(maxSize - transform.localScale.x) <= 1f
+            && Mathf.Abs(maxSize - transform.localScale.y) <= 1f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

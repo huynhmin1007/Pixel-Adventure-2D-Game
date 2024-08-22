@@ -28,8 +28,6 @@ namespace Assets.Scripts.Characters.Player
         public override void Update()
         {
             base.Update();
-
-
         }
     }
 }

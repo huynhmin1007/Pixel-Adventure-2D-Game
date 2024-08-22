@@ -51,9 +51,11 @@ namespace Assets.Scripts.Characters.Player
         {
             Collider2D[] hitColliders = Physics2D.OverlapBoxAll(character.Hitbox.bounds.center,
                 character.Hitbox.bounds.size, 0);
+
             foreach (var hitCollider in hitColliders)
             {
-                EnemyCharacter enemy = hitCollider.GetComponent<EnemyCharacter>();
+                EnemyCharacter enemy = hitCollider.GetComponentInParent<EnemyCharacter>();
+
                 if (enemy != null && enemy.CanBeStunned && !stunnedEnemies.Contains(enemy))
                 {
                     isCounterSuccessful = true;
@@ -78,6 +80,11 @@ namespace Assets.Scripts.Characters.Player
                 foreach (var enemy in stunnedEnemies)
                 {
                     enemy.Stun();
+                }
+
+                if (stunnedEnemies.Count > 0)
+                {
+                    character.cloneSkill.CreateCloneOnCounterAttack(stunnedEnemies[0].transform);
                 }
 
                 character.IsImmune = false;

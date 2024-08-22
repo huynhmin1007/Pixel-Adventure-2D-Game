@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6067257978252832358}
   - component: {fileID: 5691068945200741976}
   - component: {fileID: 6582946130707435187}
+  - component: {fileID: 4936366744294439365}
   m_Layer: 7
   m_Name: AgressiveZombi
   m_TagString: Untagged
@@ -150,7 +151,7 @@ MonoBehaviour:
   maxFollowDistance: 15
   playerLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 64
   idleTime: 1
   stunDuration: 1
   stunDirection: {x: 4, y: 3}
@@ -169,6 +170,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashDuration: 0.1
   hitMaterial: {fileID: 2100000, guid: 34179c2fc670a154e8d6be69605dd6c8, type: 2}
+--- !u!114 &4936366744294439365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927908341019562502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dacf7133f83b6547b2f0904480894d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength:
+    baseValue: 0
+    modifiers: 
+  damage:
+    baseValue: 0
+    modifiers: 
+  maxHealth:
+    baseValue: 0
+    modifiers: 
+  currentHealth: 0
 --- !u!1 &5330332342192294898
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +300,7 @@ SpriteRenderer:
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 973674433, guid: d72f936b59ffa5d45acdfbb2ba2b0b38, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.83137256, g: 0.83137256, b: 0.83137256, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -322,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 64
 --- !u!1 &6621109376858578224
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3050750898810620343}
   - component: {fileID: 7920992897911180598}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
