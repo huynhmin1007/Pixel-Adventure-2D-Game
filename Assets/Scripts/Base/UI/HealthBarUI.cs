@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Scripts.Characters.Enemy;
 using UnityEngine;
 
 public class HealthBarUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private EnemyCharacter character;
+    private RectTransform myTransform;
+
+    private void Start()
     {
-        
+        myTransform = GetComponent<RectTransform>();
+        character = GetComponentInParent<EnemyCharacter>();
+
+        character.onFlipped += FlipUI;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FlipUI()
     {
-        
+        myTransform.Rotate(0, 180, 0);
     }
 }

@@ -26,6 +26,7 @@ namespace Assets.Scripts.Characters.Enemy
 
         [HideInInspector] public Collider2D cd { get; private set; }
 
+        public System.Action onFlipped;
         public float IdleTime { get => idleTime; set => idleTime = value; }
         protected override void Start()
         {
@@ -76,6 +77,13 @@ namespace Assets.Scripts.Characters.Enemy
         public override void DamageEffect()
         {
             base.DamageEffect();
+        }
+
+        public override void Flip()
+        {
+            base.Flip();
+
+            onFlipped();
         }
 
         public abstract bool CanBattle();
