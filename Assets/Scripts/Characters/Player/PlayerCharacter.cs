@@ -2,8 +2,6 @@
 using Assets.Scripts.Characters.Skills;
 using Assets.Scripts.Common;
 using System;
-using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 namespace Assets.Scripts.Characters.Player
@@ -123,10 +121,8 @@ namespace Assets.Scripts.Characters.Player
             }
             else if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log(platForm);
                 if (platForm != null && Input.GetKey(KeyCode.S))
                 {
-                    Debug.Log("platForm is not null");
                     platForm.effector.rotationalOffset = 180f;
                     return;
                 }
@@ -135,7 +131,7 @@ namespace Assets.Scripts.Characters.Player
                 {
                     JumpCount++;
                     YInput = 1;
-                  
+
                 }
             }
             else if (Input.GetKeyDown(KeyCode.LeftControl) && dashSkill.CanUseSkill())

@@ -971,6 +971,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &350696622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8445435200381249930, guid: 9d31489a425d89a4b91a39beda966625, type: 3}
+  m_PrefabInstance: {fileID: 2378186369880737664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &350696627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350696622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07e6838d8fe87346a3ee055e4a3e0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &429719001
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,10 +8644,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 9099286176038920010, guid: 9d31489a425d89a4b91a39beda966625, type: 3}
+      propertyPath: m_Value
+      value: 0.62
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8445435200381249930, guid: 9d31489a425d89a4b91a39beda966625, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 350696627}
   m_SourcePrefab: {fileID: 100100000, guid: 9d31489a425d89a4b91a39beda966625, type: 3}
 --- !u!1001 &8130250778000745805
 PrefabInstance:
