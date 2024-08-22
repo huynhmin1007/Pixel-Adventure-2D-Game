@@ -27,7 +27,7 @@ namespace Assets.Scripts.Characters.Enemy
         {
             base.Exit();
 
-            character.flashFX.Invoke("CancelRedBlink", 0);
+            character.flashFX.Invoke("CancelColorChange", 0);
         }
 
         public override void Update()

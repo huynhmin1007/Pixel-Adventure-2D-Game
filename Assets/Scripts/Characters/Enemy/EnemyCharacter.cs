@@ -53,6 +53,23 @@ namespace Assets.Scripts.Characters.Enemy
             CanBeStunned = true;
         }
 
+        public override void SlowEntityBy(float _slowPercentage, float _slowDuration)
+        {
+
+            Debug.Log(moveSpeed);
+            moveSpeed = moveSpeed * (1 - _slowPercentage);
+            animator.speed = animator.speed * (1 - _slowPercentage);
+
+            Invoke("ReturnDefaultSpeed", _slowDuration);
+        }
+
+        protected override void ReturnDefaultSpeed()
+        {
+            base.ReturnDefaultSpeed();
+
+            moveSpeed = defaultMoveSpeed;
+        }
+
         public virtual void CloseCounterAttackWindow()
         {
             CanBeStunned = false;
@@ -114,6 +131,8 @@ namespace Assets.Scripts.Characters.Enemy
             => Physics2D.OverlapBox(Hitbox.bounds.center, Hitbox.bounds.size, 0, playerLayer);
 
         public virtual void AssignLastAnimBoolName(string _animBoolName) => lastAnimBoolName = _animBoolName;
+
+     
 
         public override void Dead()
         {
