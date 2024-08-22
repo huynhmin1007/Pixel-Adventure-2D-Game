@@ -14,4 +14,6 @@ public class BossManager : MonoBehaviour
             Destroy(instance.gameObject);
         else instance = this;
     }
+
+
 }

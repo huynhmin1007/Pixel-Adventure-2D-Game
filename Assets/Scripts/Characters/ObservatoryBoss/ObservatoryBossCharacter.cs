@@ -20,6 +20,7 @@ namespace Assets.Scripts.Characters.ObservatoryBoss
     {
         private PlayerCharacter player;
         public FireBallSkill fireBallSkill;
+        public LaserSkill laserSkill;
 
         protected override void Awake()
         {
@@ -28,6 +29,9 @@ namespace Assets.Scripts.Characters.ObservatoryBoss
             GameObject skillManagerObject = GameObject.Find("BossSkillManager");
 
             fireBallSkill = skillManagerObject.GetComponent<FireBallSkill>();
+            laserSkill = skillManagerObject.GetComponent<LaserSkill>();
+            if( laserSkill != null ) 
+                Debug.Log("Laser skill ton tai");
         }
 
         protected override void Start()
@@ -45,7 +49,15 @@ namespace Assets.Scripts.Characters.ObservatoryBoss
         {
             if (fireBallSkill.CanUseSkill())
             {
+                Debug.Log(stateMachine.CurrentState.AnimBoolName);
+
                 stateMachine.ChangeState(states[EObservatoryBossState.IdleBall]);
+                return true;
+            }
+            else if (laserSkill.CanUseSkill()) 
+            {
+                //Debug.Log(stateMachine.CurrentState.AnimBoolName);
+                stateMachine.ChangeState(states[EObservatoryBossState.LaserJumpLoad]);
                 return true;
             }
             else if (IsPlayerInAttackRange())
@@ -60,7 +72,7 @@ namespace Assets.Scripts.Characters.ObservatoryBoss
             }
 
             MoveToPlayer();
-
+                
             return true;
         }
 
@@ -92,6 +104,10 @@ namespace Assets.Scripts.Characters.ObservatoryBoss
             states.Add(EState.Stunned, new EnemyStunnedState(this, stateMachine, EState.Stunned));
             states.Add(EObservatoryBossState.IdleBall, new IdleFireBallState(this, stateMachine, EObservatoryBossState.IdleBall));
             states.Add(EObservatoryBossState.FireBall, new FireBallState(this, stateMachine, EObservatoryBossState.FireBall));
+            states.Add(EObservatoryBossState.LaserJumpLoad, new LaserJumpLoadState(this, stateMachine, EObservatoryBossState.LaserJumpLoad));
+            states.Add(EObservatoryBossState.IdleLaserLoad, new IdleLaserLoadState(this, stateMachine, EObservatoryBossState.IdleLaserLoad));
+            states.Add(EObservatoryBossState.Laser, new LaserState(this, stateMachine, EObservatoryBossState.Laser));
+
         }
 
         protected override void StateController()
