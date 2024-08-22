@@ -199,5 +199,11 @@ namespace Assets.Scripts.Characters.Player
             }
             return check;
         }
+        public override void Dead()
+        {
+            base.Dead();
+
+            stateMachine.ChangeState(states[EState.Dead]);
+        }
     }
 }

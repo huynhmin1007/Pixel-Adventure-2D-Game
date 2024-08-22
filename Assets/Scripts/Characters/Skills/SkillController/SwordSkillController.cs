@@ -170,7 +170,7 @@ namespace Assets.Scripts.Characters.Skills
         {
             if (isReturning) return;
 
-            EnemyCharacter enemy = collision.GetComponent<EnemyCharacter>();
+            EnemyCharacter enemy = collision.GetComponentInParent<EnemyCharacter>();
 
             if (enemy != null)
             {
@@ -183,7 +183,7 @@ namespace Assets.Scripts.Characters.Skills
 
         private void SwordSkillDamage(EnemyCharacter enemy)
         {
-            enemy.Damage();
+            enemy.DamageEffect();
             enemy.StartCoroutine("FreezeTimeFor", freezeTimeDuration);
         }
 
@@ -210,7 +210,7 @@ namespace Assets.Scripts.Characters.Skills
 
         private void StuckInto(Collider2D collision)
         {
-            if (pierceAmount > 0 && collision.GetComponent<EnemyCharacter>() != null)
+            if (pierceAmount > 0 && collision.GetComponentInParent<EnemyCharacter>() != null)
             {
                 pierceAmount--;
                 return;

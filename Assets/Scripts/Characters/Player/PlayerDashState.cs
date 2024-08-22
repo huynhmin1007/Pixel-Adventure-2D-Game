@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.Base;
 using Assets.Scripts.Base.State;
 using System;
-using UnityEngine;
 
 namespace Assets.Scripts.Characters.Player
 {
@@ -19,12 +18,13 @@ namespace Assets.Scripts.Characters.Player
             base.Enter();
 
             character.IsImmune = true;
-            character.cloneSkill.UseSkill(characterBase.transform, Vector3.zero);
+            character.cloneSkill.CreateCloneOnDashStart();
         }
 
         public override void Exit()
         {
             base.Exit();
+            character.cloneSkill.CreateCloneOnDashOver();
             character.dashSkill.TriggerExitSkill();
             character.IsImmune = false;
         }

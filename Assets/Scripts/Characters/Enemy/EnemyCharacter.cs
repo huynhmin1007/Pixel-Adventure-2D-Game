@@ -22,11 +22,15 @@ namespace Assets.Scripts.Characters.Enemy
         [SerializeField] protected Vector2 stunDirection;
         protected bool canBeStunned;
         [SerializeField] protected GameObject warningImage;
+        protected string lastAnimBoolName;
+
+        [HideInInspector] public Collider2D cd { get; private set; }
 
         public float IdleTime { get => idleTime; set => idleTime = value; }
         protected override void Start()
         {
             base.Start();
+            cd = GetComponent<Collider2D>();
         }
 
         protected override void OnDrawGizmos()
@@ -69,9 +73,9 @@ namespace Assets.Scripts.Characters.Enemy
             return false;
         }
 
-        public override void Damage()
+        public override void DamageEffect()
         {
-            base.Damage();
+            base.DamageEffect();
         }
 
         public abstract bool CanBattle();
@@ -85,11 +89,21 @@ namespace Assets.Scripts.Characters.Enemy
         public float StunDuration { get => stunDuration; set => stunDuration = value; }
         public Vector2 StunDirection { get => stunDirection; set => stunDirection = value; }
         public bool CanBeStunned { get => canBeStunned; set => canBeStunned = value; }
+        public string LastAnimBoolName { get => lastAnimBoolName; set => lastAnimBoolName = value; }
 
         public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(transform.position,
            Direction.ToVector2(), PlayerCheckDistance, playerLayer);
 
         public virtual Collider2D IsPlayerInAttackRange()
             => Physics2D.OverlapBox(Hitbox.bounds.center, Hitbox.bounds.size, 0, playerLayer);
+
+        public virtual void AssignLastAnimBoolName(string _animBoolName) => lastAnimBoolName = _animBoolName;
+
+        public override void Dead()
+        {
+            base.Dead();
+
+            stateMachine.ChangeState(states[EState.Dead]);
+        }
     }
 }
