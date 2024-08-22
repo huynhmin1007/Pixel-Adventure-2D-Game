@@ -35,7 +35,7 @@ public class CrystalSkillController : MonoBehaviour
             ExplodeCrystal();
         }
 
-        if (canMoveToEnemy)
+        if (canMoveToEnemy && closestTarget != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, closestTarget.position, moveSpeed * Time.deltaTime);
 
@@ -75,7 +75,7 @@ public class CrystalSkillController : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.Damage();
+                enemy.DamageEffect();
             }
         }
     }

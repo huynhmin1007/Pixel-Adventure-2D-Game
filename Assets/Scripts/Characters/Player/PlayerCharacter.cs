@@ -86,6 +86,7 @@ namespace Assets.Scripts.Characters.Player
             states.Add(EPlayerState.AimSword, new PlayerAimSwordState(this, stateMachine, EPlayerState.AimSword));
             states.Add(EPlayerState.CatchSword, new PlayerCatchSwordState(this, stateMachine, EPlayerState.CatchSword));
             states.Add(EPlayerState.BlackHole, new PlayerBlackHoleState(this, stateMachine, EState.Air));
+            states.Add(EState.Dead, new PlayerDeadState(this, stateMachine, EState.Dead));
         }
 
         protected override void StateController()
@@ -159,6 +160,13 @@ namespace Assets.Scripts.Characters.Player
         {
             ((SkillState)states[EPlayerState.BlackHole]).IsCasting = false;
             stateMachine.ChangeState(states[EState.Fall]);
+        }
+
+        public override void Dead()
+        {
+            base.Dead();
+
+            stateMachine.ChangeState(states[EState.Dead]);
         }
     }
 }

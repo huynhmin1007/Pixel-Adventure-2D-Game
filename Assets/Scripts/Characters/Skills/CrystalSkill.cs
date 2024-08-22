@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Characters.Player;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Characters.Skills
@@ -8,6 +9,9 @@ namespace Assets.Scripts.Characters.Skills
         [SerializeField] private GameObject crystalPrefab;
         [SerializeField] private float crystalDuration;
         private GameObject currentCrystal;
+
+        [Header("Crystal mirage")]
+        [SerializeField] private bool cloneInsteadOfCrystal;
 
         [Header("Explosive crystal")]
         [SerializeField] private bool canExplode;
@@ -32,11 +36,7 @@ namespace Assets.Scripts.Characters.Skills
 
             if (currentCrystal == null)
             {
-                currentCrystal = Instantiate(crystalPrefab, character.transform.position, Quaternion.identity);
-                CrystalSkillController currentCrystalScript = currentCrystal.GetComponent<CrystalSkillController>();
-
-                currentCrystalScript.SetupCrystal(crystalDuration, canExplode, canMoveToEnemy, moveSpeed,
-                    FindClosestEnemy(currentCrystal.transform));
+                CreateCrystal();
             }
             else
             {
@@ -45,10 +45,25 @@ namespace Assets.Scripts.Characters.Skills
 
                 Vector2 playerPos = character.transform.position;
                 character.transform.position = currentCrystal.transform.position;
-
                 currentCrystal.transform.position = playerPos;
-                currentCrystal.GetComponent<CrystalSkillController>()?.ExplodeCrystal();
+
+                if (cloneInsteadOfCrystal)
+                {
+                    PlayerManager.instance.player.cloneSkill.CreateClone(currentCrystal.transform, Vector3.zero);
+                    Destroy(currentCrystal);
+                }
+                else
+                    currentCrystal.GetComponent<CrystalSkillController>()?.ExplodeCrystal();
             }
+        }
+
+        public void CreateCrystal()
+        {
+            currentCrystal = Instantiate(crystalPrefab, character.transform.position, Quaternion.identity);
+            CrystalSkillController currentCrystalScript = currentCrystal.GetComponent<CrystalSkillController>();
+
+            currentCrystalScript.SetupCrystal(crystalDuration, canExplode, canMoveToEnemy, moveSpeed,
+                FindClosestEnemy(currentCrystal.transform));
         }
 
         private bool CanUseMultiCrystal()
@@ -68,7 +83,8 @@ namespace Assets.Scripts.Characters.Skills
                     crystalLeft.Remove(crystalToSpawn);
 
                     newCrystal.GetComponent<CrystalSkillController>()
-                        .SetupCrystal(crystalDuration, canExplode, canMoveToEnemy, moveSpeed, FindClosestEnemy(newCrystal.transform));
+                        .SetupCrystal(crystalDuration, canExplode, canMoveToEnemy, moveSpeed,
+                        FindClosestEnemy(newCrystal.transform));
 
                     if (crystalLeft.Count <= 0)
                     {

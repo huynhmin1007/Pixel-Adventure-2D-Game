@@ -60,7 +60,7 @@ namespace Assets.Scripts.Characters.Skills
 
             float closestDistance = Mathf.Infinity;
             Transform closestEnemy = null;
-
+            ;
             foreach (Collider2D hit in colliders)
             {
                 EnemyCharacter enemy = hit.GetComponent<EnemyCharacter>();
@@ -71,6 +71,7 @@ namespace Assets.Scripts.Characters.Skills
 
                     if (distanceToEnemy < closestDistance)
                     {
+
                         closestDistance = distanceToEnemy;
                         closestEnemy = hit.transform;
                     }
