@@ -29,13 +29,14 @@ namespace Assets.Scripts.Base.UI
 
         private void RedColorBlink()
         {
-            sr.color = sr.color == Color.white ? hitMaterial.color : Color.white;
+            Color grayColor = new Color(0.83f, 0.83f, 0.83f);
+            sr.color = sr.color == grayColor ? hitMaterial.color : grayColor;
         }
 
         private void CancelRedBlink()
         {
             CancelInvoke();
-            sr.color = Color.white;
+            sr.color = new Color(0.83f, 0.83f, 0.83f);
         }
     }
 }

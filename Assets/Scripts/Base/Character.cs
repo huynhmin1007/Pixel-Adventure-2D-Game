@@ -56,6 +56,7 @@ public abstract class Character : MonoBehaviour
     #endregion
 
     protected bool isImmune;
+    public CharacterStats stats { get; private set; }
 
     protected virtual void Awake()
     {
@@ -75,6 +76,7 @@ public abstract class Character : MonoBehaviour
     {
         defaultColor = sr.color;
         stateMachine.Initialize(states[EState.Idle]);
+        stats = GetComponent<CharacterStats>();
     }
 
     protected virtual void Update()
@@ -132,14 +134,10 @@ public abstract class Character : MonoBehaviour
         groundCheck.Draw();
     }
 
-    public virtual void Damage()
+    public virtual void DamageEffect()
     {
-        if (!IsImmune)
-        {
-            flashFX.StartCoroutine("FlashFX");
-            StartCoroutine("HitKnockback");
-        }
-        else return;
+        flashFX.StartCoroutine("FlashFX");
+        StartCoroutine("HitKnockback");
     }
 
     protected virtual IEnumerator HitKnockback()
@@ -160,6 +158,11 @@ public abstract class Character : MonoBehaviour
             sr.color = Color.clear;
         }
         else sr.color = defaultColor;
+    }
+
+    public virtual void Dead()
+    {
+
     }
 
     protected abstract void StateController();
@@ -210,4 +213,5 @@ public abstract class Character : MonoBehaviour
     public Collider2D Hitbox { get => hitboxAttack; set => hitboxAttack = value; }
     public float FreezeTime { get => freezeTime; set => freezeTime = value; }
     public Rigidbody2D Rb { get => rb; set => rb = value; }
+    public StateMachine StateMachine { get => stateMachine; set => stateMachine = value; }
 }

@@ -1,4 +1,5 @@
 using Assets.Scripts.Characters.Enemy;
+using Assets.Scripts.Characters.Player;
 using UnityEngine;
 
 public class CloneSkillController : MonoBehaviour
@@ -12,6 +13,10 @@ public class CloneSkillController : MonoBehaviour
     [SerializeField] private Transform attackCheck;
     [SerializeField] private float attackCheckRadius = .8f;
     private Transform closestEnemy;
+
+    private bool canDuplicateClone;
+    private float chanceToDuplicate;
+    private int facingDir = 1;
 
     private void Awake()
     {
@@ -32,7 +37,8 @@ public class CloneSkillController : MonoBehaviour
         }
     }
 
-    public void SetupClone(Transform newTransform, float cloneDuration, bool canAttack, Vector3 _offset, Transform _closestEnemy)
+    public void SetupClone(Transform newTransform, float cloneDuration, bool canAttack, Vector3 _offset, Transform _closestEnemy,
+        bool _canDuplicateClone = false, float _chanceToDuplicate = 0)
     {
         if (canAttack)
             animator.SetInteger("AttackNumber", Random.Range(1, 3));
@@ -41,6 +47,8 @@ public class CloneSkillController : MonoBehaviour
         cloneTimer = cloneDuration;
 
         closestEnemy = _closestEnemy;
+        chanceToDuplicate = _chanceToDuplicate;
+        canDuplicateClone = _canDuplicateClone;
         FaceClosestTarget();
     }
 
@@ -59,7 +67,15 @@ public class CloneSkillController : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.Damage();
+                enemy.DamageEffect();
+            }
+        }
+
+        if (canDuplicateClone)
+        {
+            if (Random.Range(0, 100) < chanceToDuplicate)
+            {
+                PlayerManager.instance.player.cloneSkill.CreateClone(colliders[0].transform, new Vector3(.5f * facingDir, 0));
             }
         }
     }
@@ -70,6 +86,7 @@ public class CloneSkillController : MonoBehaviour
         {
             if (transform.position.x > closestEnemy.position.x)
             {
+                facingDir = -1;
                 transform.Rotate(0, 180, 0);
             }
         }
