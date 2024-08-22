@@ -184,6 +184,7 @@ namespace Assets.Scripts.Characters.Player
             base.Dead();
 
             stateMachine.ChangeState(states[EState.Dead]);
+        }
         public bool IsState(Enum state)
         {
             return stateMachine.IsAnimation(state);
