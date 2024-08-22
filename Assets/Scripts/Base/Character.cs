@@ -58,6 +58,8 @@ public abstract class Character : MonoBehaviour
     protected bool isImmune;
     public CharacterStats stats { get; private set; }
 
+    public System.Action onFlipped;
+
     protected virtual void Awake()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -107,6 +109,7 @@ public abstract class Character : MonoBehaviour
         Direction = Direction.Flip();
         wallCheck.Direction = Direction;
         transform.Rotate(0, 180, 0);
+        onFlipped();
     }
 
     public void SetVelocity(float x, float y, bool flip = false)
